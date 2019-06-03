@@ -1,0 +1,44 @@
+element.style {
+}
+.modal .modal-content {
+     padding: 20px 20px 4px 20px; 
+}
+
+.row{
+	    margin-bottom: 0px;
+}
+
+  .parallax-container {
+      height: 750px;
+    }
+@media only screen and (max-width: 600px) {
+  .parallax-container {
+      height: 1100px;
+    }
+}
+
+.page-footer {
+    padding-top: 10px;
+    color: #fff;
+    background-color: #ee6e73;
+    padding-bottom: 10px;
+}
+
+.sn-bg-1{
+  background-image:url(https://www.len-telko.co.id/wp-content/uploads/2017/01/palapa-irng-2.jpg) 
+}
+.sn-bg-2{
+  background-image:url(https://www.len-telko.co.id/wp-content/uploads/2017/01/palapa-irng-2.jpg) 
+}
+.sn-bg-3{
+  background-image:url(https://www.len-telko.co.id/wp-content/uploads/2017/01/palapa-irng-2.jpg) 
+}
+.sn-bg-4{
+  background-image:url(https://www.len-telko.co.id/wp-content/uploads/2017/01/palapa-irng-2.jpg) 
+}
+.sn-bg-5{
+  background-image:url(https://www.len-telko.co.id/wp-content/uploads/2017/01/palapa-irng-2.jpg) 
+}
+.sn-bg-6{
+  background-image:url(https://www.len-telko.co.id/wp-content/uploads/2017/01/palapa-irng-2.jpg) 
+}

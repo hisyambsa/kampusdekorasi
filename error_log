@@ -1,0 +1,1 @@
+[10-Dec-2018 02:03:33 UTC] PHP Fatal error:  Call to a member function get_by_id() on a non-object in /home/hisyamasr/public_html/spk/application/controllers/_table_asr_user.php on line 146

@@ -1,0 +1,25 @@
+/*.md-form {position: relative; margin-top: 0px; margin-bottom: 0px; } .error{color: red; } .sn-bg-4{background-image:url(http://www.img.ismul.com/gambarweb.jpg) }*/
+
+
+body, html {
+  min-height: 100%;
+    
+}
+
+.bgLogin {
+	background-image: url("../../img/background_login.jpg");
+  /* The image used */
+  background-color: grey;
+  /* Full height */
+  height: 100%;
+  width: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*@media (max-height: 992px)*/
+.side-nav .logo-wrapper {
+    height: 180px;
+}

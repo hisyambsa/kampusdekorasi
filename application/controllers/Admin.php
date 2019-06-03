@@ -1,0 +1,24 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Admin extends CI_Controller {
+
+	public function __construct()
+	{
+		parent::__construct();
+	}
+
+	public function index()
+	{
+		$data = array(
+			'judul' => 'Admin WO', 
+		);
+		$this->load->view('inc/link-head-admin',$data);
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/beranda');
+		$this->load->view('inc/footer-js-admin');
+	}
+
+}
+
+/* End of file Admin.php */
+/* Location: ./application/controllers/Admin.php */
