@@ -7,11 +7,11 @@
 
 
 <!-- Grid row -->
-<body class="">
+<body class="pink-skin">
 
   
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark default-color text-white sticky-top scrolling-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color text-white sticky-top scrolling-navbar">
       <div class="container">
         <a class="navbar-brand" href="#"><img src="<?php echo base_url('img/logo_favicon.png') ?>" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"

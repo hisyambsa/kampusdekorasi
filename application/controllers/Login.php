@@ -43,10 +43,10 @@ class Login extends CI_Controller {
 			$updateLogin = array(
 				'last_login' => date("Y-m-d H:i:s"),
 			);
-			$coba = $this->wo_admin_model->update($ambilDataLogin->id_user, $updateLogin);
+			$coba = $this->wo_admin_model->update($ambilDataLogin->id_admin, $updateLogin);
 
 			$data = array(
-				'id_user' => $ambilDataLogin->id_user,
+				'id_admin' => $ambilDataLogin->id_admin,
 				'username' => $ambilDataLogin->username,
 				'akses' => $ambilDataLogin->id_akses,
 			);

@@ -21,7 +21,7 @@ class Upload_model extends CI_Model {
             
     }
 
-    function ambiltempatupload($tempat,$folder='',$namaFile='')
+    function ambiltempatupload($tempat,$folder='random',$namaFile='')
     {
 
 

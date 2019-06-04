@@ -57,19 +57,18 @@ foreach ($non_pk as $row) {
 $string .= "<td style=\"text-align:center\" width=\"120px\">
                     <a href=\"<?php echo base_url().'".$c_url."/read/'.\$".$c_url."->".$pk." ?>\"  class=\"btn btn-sm btn-info\" data-toggle=\"tooltip\" title=\"Lihat\">
                      <span class=\"fa fa-eye\"></span>
-                      <a onclick=\"alert('Anda akan diarahkan ke form Ubah data')\" href=\"<?php echo base_url().'".$c_url."/update/'.\$".$c_url."->".$pk." ?>\"  class=\"btn btn-sm btn-warning\" data-toggle=\"tooltip\" title=\"Ubah\">
+                      <a onclick=\"redirectPesan('info','mohon tunggu...')\" href=\"<?php echo base_url().'".$c_url."/update/'.\$".$c_url."->".$pk." ?>\"  class=\"btn btn-sm btn-warning\" data-toggle=\"tooltip\" title=\"Ubah\">
                         <span class=\"fa fa-edit\"></span>
-                        <a onclick=\"return confirm('anda yakin akan menghapus data?')\" href=\"<?php echo '".$c_url."/delete/'.\$".$c_url."->".$pk." ?>\"  class=\"btn btn-sm btn-danger\" data-toggle=\"tooltip\" title=\"Hapus\">
+                        <a onclick=\"return confirmHapus('Hapus','anda yakin akan menghapus data?','<?php echo '".$c_url."/delete/'.\$".$c_url."->".$pk." ?>')\" class=\"btn btn-sm btn-danger\" data-toggle=\"tooltip\" title=\"Hapus\">
                           <span class=\"fa fa-trash\"></span>
                       </td>";
-
 $string .=  "\n\t\t</tr>
             <?php
             }
              if (\$start==0) {
                 ?>
         <script>
-          alert('Data tidak ditemukan');
+          redirectPesan('error','Data tidak ditemukan');
         </script>   
             <?php } ?>
         </table>

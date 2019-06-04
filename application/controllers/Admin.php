@@ -16,6 +16,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/beranda');
 		$this->load->view('inc/footer-js-admin');
+		$this->load->view('_adds-on/carousel-3d.php');
 	}
 
 }

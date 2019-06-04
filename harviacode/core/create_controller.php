@@ -87,8 +87,7 @@ $string .= "\n\t    );
             \$this->load->view('$c_url/$v_read', \$data);
             \$this->load->view('inc/footer-js-admin');
         } else {
-            \$this->session->set_flashdata('pesan', 'Data tidak ditemukan');
-            redirect(site_url('$c_url'));
+            show_error('Data tidak ditemukan atau hilang, hubungi administrator <br> <a href=\"javascript: history.go(-1)\"> kembali ke ke halaman sebelumnya </a>');
         }
     }
 
@@ -139,8 +138,7 @@ $string .= "\n\t    );
             \$this->load->view('$c_url/$v_form', \$data);
             \$this->load->view('inc/footer-js-admin');
         } else {
-            \$this->session->set_flashdata('pesan', 'Data tidak ditemukan');
-            redirect(site_url('$c_url'));
+            show_error('Data tidak ditemukan atau hilang, hubungi administrator <br> <a href=\"javascript: history.go(-1)\"> kembali ke ke halaman sebelumnya </a>');
         }
     }
     
@@ -172,9 +170,7 @@ $string .= "\n\t    );
             \$this->session->set_flashdata('pesan', 'Berhasil Hapus Data');
             redirect(site_url('$c_url'));
         } else {
-            \$this->session->set_flashdata('pesan', 'Data tidak ditemukan');
-            redirect(site_url('$c_url'));
-        }
+            show_error('Data tidak ditemukan atau hilang, hubungi administrator <br> <a href=\"javascript: history.go(-1)\"> kembali ke ke halaman sebelumnya </a>');        }
     }
 
     public function _rules() 

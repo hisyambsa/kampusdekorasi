@@ -1,16 +1,8 @@
 <?php if (!defined('BASEPATH'))
-exit('No direct script access allowed');
-/*
-<!-- .................................. -->
-<!-- ...........COPYRIGHT ............. -->
-<!-- Authors : Hisyam Husein .......... -->
-<!-- Email : hisyam.husein@gmail.com .. -->
-<!-- About : hisyam.ismul.com ......... -->
-<!-- Instagram : @hisyambsa............ -->
-<!-- .................................. -->
-*/
+    exit('No direct script access allowed');
 
-class wo_akses extends CI_Controller
+
+class Wo_akses extends CI_Controller
 {
     function __construct()
     {

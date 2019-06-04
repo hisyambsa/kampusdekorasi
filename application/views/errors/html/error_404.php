@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <h1>Oops!!!</h1>
 <h2>404 - Halaman tidak ditemukan</h2>
 </div>
-<a href="javascript:history.go(-1)">- LTI - kembali ke halaman sebelumnya </a>
+<a href="javascript:history.go(-1)">- KAMPUS DEKORASI - kembali </a>
 <h4>* Hubungi admin jika anda menemukan halaman ini</h4>
 </div>
 </div>

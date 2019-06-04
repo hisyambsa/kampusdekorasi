@@ -32,7 +32,7 @@
           font-size: 6vw;
         }
       }
-      .bgberandaPegawai {
+      .bgberanda {
         background-image: url("<?php echo base_url()?>img/palapa-ring-opacity.png");
         /* The image used */
         background-color: grey;
