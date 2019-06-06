@@ -1,4 +1,4 @@
-
+<?php var_dump($wo_detail_include_data) ?>
         <div class="row">
             <div class="col-md-1 text-center mt-2">
                 <button class="btn btn-flat btn-rounded hoverable btn-kembali"><h4><i class="fas fa-chevron-circle-left"></i></h4></button>
@@ -9,7 +9,8 @@
                 <br>
             </div>
             <div class="col-md-4 text-center">
-                <h2 style="margin-top:0px">Daftar Wo_detail_include</h2>
+                <h2 style="margin-top:0px">Daftar Wo_detail_include
+                </h2>
 
             </div>
             <div class="col-md-4 text-right">
@@ -35,8 +36,8 @@
         <table class="table table-hover text-nowrap table-sm text-center" style="margin-bottom: 10px">
             <tr>
                 <th class="th-sm">No</th>
-		<th class="th-sm">Id Detail Include Pemesanan</th>
-		<th class="th-sm">Id Detail Include Include</th>
+		<th class="th-sm">Nama Pemesanan</th>
+		<th class="th-sm">Nama Include</th>
 		<th class="th-sm">Jumlah</th>
 		<th class="th-sm">Harga Total</th>
 		<th class="th-sm">Aksi</th>
@@ -46,8 +47,8 @@
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $wo_detail_include->id_detail_include_pemesanan ?></td>
-			<td><?php echo $wo_detail_include->id_detail_include_include ?></td>
+			<td><?php echo $wo_detail_include->foto_bukti ?></td>
+			<td><?php echo $wo_detail_include->nama_include ?></td>
 			<td><?php echo $wo_detail_include->jumlah ?></td>
 			<td><?php echo $wo_detail_include->harga_total ?></td><td style="text-align:center" width="120px">
                     <a href="<?php echo base_url().'wo_detail_include/read/'.$wo_detail_include->id_detail_include ?>"  class="btn btn-sm btn-info" data-toggle="tooltip" title="Lihat">

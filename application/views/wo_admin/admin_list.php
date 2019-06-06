@@ -1,23 +1,9 @@
-<?php
-/*
-<!-- .................................. -->
-<!-- ...........COPYRIGHT ............. -->
-<!-- Authors : Hisyam Husein .......... -->
-<!-- Email : hisyam.husein@gmail.com .. -->
-<!-- About : hisyam.ismul.com ......... -->
-<!-- Instagram : @hisyambsa............ -->
-<!-- .................................. -->
-*/
-?>
-<?php if ($this->session->userdata('pesan')<>''): ?>
-  <?php $pesan = $this->session->userdata('pesan'); ?>
-  <script>
-      redirectPesan('success','<?php echo $pesan ?>');
-  </script>
-<?php endif ?>
+
 <div class="row">
   <div class="col-md-1 text-center mt-2">
-    <a class="text-secondary" href="<?php echo base_url('dashboard/beranda') ?>"><button class="btn btn-flat btn-rounded hoverable"><h4><i class="fas fa-chevron-circle-up"></i></h4></button></a>
+        <a href="<?php echo base_url('admin') ?>">
+            <button class="btn btn-flat btn-rounded hoverable btn-kembali"><h4><i class="fas fa-chevron-circle-left"></i></h4></button>
+        </a>
   </div>
   <div class="col-md-3 text-center mt-2">
     <?php echo anchor(site_url('wo_admin/create'),'Buat User', 'class="btn btn-primary btn-rounded d-inline"'); ?>

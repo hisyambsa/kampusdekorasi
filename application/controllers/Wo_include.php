@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+exit('No direct script access allowed');
 
 class Wo_include extends CI_Controller
 {
@@ -10,7 +10,7 @@ class Wo_include extends CI_Controller
         $this->load->library('form_validation');
 
         $admin = array(
-            'judul' => 'BERANDA ADMIN', 
+            'judul' => 'WO - Include', 
         );
         $this->load->view('inc/link-head-admin',$admin);
         $this->load->view('admin/sidebar');
@@ -54,12 +54,12 @@ class Wo_include extends CI_Controller
         $row = $this->Wo_include_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'id_include' => $row->id_include,
-		'nama_include' => $row->nama_include,
-		'harga_include' => $row->harga_include,
-		'satuan_include' => $row->satuan_include,
-		'foto_include' => $row->foto_include,
-	    );
+              'id_include' => $row->id_include,
+              'nama_include' => $row->nama_include,
+              'harga_include' => $row->harga_include,
+              'satuan_include' => $row->satuan_include,
+              'foto_include' => $row->foto_include,
+          );
             $this->load->view('wo_include/wo_include_read', $data);
             $this->load->view('inc/footer-js-admin');
         } else {
@@ -67,42 +67,55 @@ class Wo_include extends CI_Controller
         }
     }
 
-    public function create() 
+    public function create($foto = '') 
     {
         $data = array(
             'button' => 'Buat',
             'action' => site_url('wo_include/create_action'),
-	    'id_include' => set_value('id_include'),
-	    'nama_include' => set_value('nama_include'),
-	    'harga_include' => set_value('harga_include'),
-	    'satuan_include' => set_value('satuan_include'),
-	    'foto_include' => set_value('foto_include'),
-	);
+            'id_include' => set_value('id_include'),
+            'nama_include' => set_value('nama_include'),
+            'harga_include' => set_value('harga_include'),
+            'satuan_include' => set_value('satuan_include'),
+            'foto_include' => set_value('foto_include'),
+            'foto' => $foto,
+
+        );
         $this->load->view('wo_include/wo_include_form', $data);
         $this->load->view('inc/footer-js-admin');
+        $this->load->view('_adds-on/upload');
     }
     
     public function create_action() 
     {
+        $this->form_validation->set_rules('nama_include', 'nama include', 'trim|required|is_unique[include.nama_include]');
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->create();
+            $this->create('- Upload kembali');
+            echo "string";
         } else {
-            $data = array(
-		'nama_include' => $this->input->post('nama_include',TRUE),
-		'harga_include' => $this->input->post('harga_include',TRUE),
-		'satuan_include' => $this->input->post('satuan_include',TRUE),
-		'foto_include' => $this->input->post('foto_include',TRUE),
-	    );
+            $this->load->model('Upload_model');
+            $foto_include = 'foto_include';
+            $foto_include = $this->Upload_model->ambiltempatupload($foto_include,'include',$this->input->post('nama_include',TRUE));
 
-            $this->Wo_include_model->insert($data);
-            $this->session->set_flashdata('pesan', 'Berhasil Tambah Data');
-            redirect(site_url('wo_include'));
+            if (is_array($foto_include)) {
+                $this->create($foto_include['error']);
+            }else{
+                $data = array(
+                  'nama_include' => $this->input->post('nama_include',TRUE),
+                  'harga_include' => $this->input->post('harga_include',TRUE),
+                  'satuan_include' => $this->input->post('satuan_include',TRUE),
+                  'foto_include' => $foto_include,
+              );
+
+                $this->Wo_include_model->insert($data);
+                $this->session->set_flashdata('pesan', 'Berhasil Tambah Data');
+                redirect(site_url('wo_include'));
+            }
         }
     }
     
-    public function update($id) 
+    public function update($id,$foto = '') 
     {
         $row = $this->Wo_include_model->get_by_id($id);
 
@@ -110,14 +123,17 @@ class Wo_include extends CI_Controller
             $data = array(
                 'button' => 'Ubah',
                 'action' => site_url('wo_include/update_action'),
-		'id_include' => set_value('id_include', $row->id_include),
-		'nama_include' => set_value('nama_include', $row->nama_include),
-		'harga_include' => set_value('harga_include', $row->harga_include),
-		'satuan_include' => set_value('satuan_include', $row->satuan_include),
-		'foto_include' => set_value('foto_include', $row->foto_include),
-	    );
+                'id_include' => set_value('id_include', $row->id_include),
+                'nama_include' => set_value('nama_include', $row->nama_include),
+                'harga_include' => set_value('harga_include', $row->harga_include),
+                'satuan_include' => set_value('satuan_include', $row->satuan_include),
+                'foto_include' => set_value('foto_include', $row->foto_include),
+                'foto' => $foto
+            );
             $this->load->view('wo_include/wo_include_form', $data);
             $this->load->view('inc/footer-js-admin');
+            $this->load->view('_adds-on/upload');
+
         } else {
             show_error('Data tidak ditemukan atau hilang, hubungi administrator <br> <a href="javascript: history.go(-1)"> kembali ke ke halaman sebelumnya </a>');
         }
@@ -128,18 +144,25 @@ class Wo_include extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('id_include', TRUE));
+            $this->update($this->input->post('id_include', TRUE),'- Upload kembali');
         } else {
-            $data = array(
-		'nama_include' => $this->input->post('nama_include',TRUE),
-		'harga_include' => $this->input->post('harga_include',TRUE),
-		'satuan_include' => $this->input->post('satuan_include',TRUE),
-		'foto_include' => $this->input->post('foto_include',TRUE),
-	    );
+            $this->load->model('Upload_model');
+            $foto_include = 'foto_include';
+            $foto_include = $this->Upload_model->ambiltempatupload($foto_include,'include',$this->input->post('nama_include',TRUE));
+            if (is_array($foto_include)) {
+                $this->create($foto_include['error']);
+            }else{        
+                $data = array(
+                  'nama_include' => $this->input->post('nama_include',TRUE),
+                  'harga_include' => $this->input->post('harga_include',TRUE),
+                  'satuan_include' => $this->input->post('satuan_include',TRUE),
+                  'foto_include' => $foto_include,
+              );
 
-            $this->Wo_include_model->update($this->input->post('id_include', TRUE), $data);
-            $this->session->set_flashdata('pesan', 'Berhasil Ubah Data');
-            redirect(site_url('wo_include'));
+                $this->Wo_include_model->update($this->input->post('id_include', TRUE), $data);
+                $this->session->set_flashdata('pesan', 'Berhasil Ubah Data');
+                redirect(site_url('wo_include'));
+            }
         }
     }
     
@@ -153,22 +176,21 @@ class Wo_include extends CI_Controller
             redirect(site_url('wo_include'));
         } else {
             show_error('Data tidak ditemukan atau hilang, hubungi administrator <br> <a href="javascript: history.go(-1)"> kembali ke ke halaman sebelumnya </a>');        }
-    }
+        }
 
-    public function _rules() 
-    {
-	$this->form_validation->set_rules('nama_include', 'nama include', 'trim|required');
-	$this->form_validation->set_rules('harga_include', 'harga include', 'trim|required|numeric');
-	$this->form_validation->set_rules('satuan_include', 'satuan include', 'trim|required');
-	$this->form_validation->set_rules('foto_include', 'foto include', 'trim|required');
+        public function _rules() 
+        {
+           $this->form_validation->set_rules('harga_include', 'harga include', 'trim|required|numeric');
+           $this->form_validation->set_rules('satuan_include', 'satuan include', 'trim|required');
+           $this->form_validation->set_rules('foto_include', 'foto include', 'trim');
 
-	$this->form_validation->set_rules('id_include', 'id_include', 'trim');
-	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
-    }
+           $this->form_validation->set_rules('id_include', 'id_include', 'trim');
+           $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+       }
 
-}
+   }
 
-/* End of file Wo_include.php */
-/* Location: ./application/controllers/Wo_include.php */
-/* Please DO NOT modify this information : */
-/* Generated : 2019-06-04 05:59:14 */
+   /* End of file Wo_include.php */
+   /* Location: ./application/controllers/Wo_include.php */
+   /* Please DO NOT modify this information : */
+   /* Generated : 2019-06-04 05:59:14 */

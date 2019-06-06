@@ -22,8 +22,8 @@
 </style>
 <style type="text/css">
   #image-preview {
-    width: 400px;
-    height: 400px;
+    /*width: 400px;*/
+    /*height: 400px;*/
     position: relative;
     overflow: hidden;
     background-color: #ffffff;
@@ -55,5 +55,9 @@
     text-align: center;
   }
 </style>
+
+<script>
+  $('.file_upload').file_upload();
+</script>
 
 

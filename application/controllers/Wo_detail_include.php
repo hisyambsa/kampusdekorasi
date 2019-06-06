@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+exit('No direct script access allowed');
 
 class Wo_detail_include extends CI_Controller
 {
@@ -54,12 +54,16 @@ class Wo_detail_include extends CI_Controller
         $row = $this->Wo_detail_include_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'id_detail_include' => $row->id_detail_include,
-		'id_detail_include_pemesanan' => $row->id_detail_include_pemesanan,
-		'id_detail_include_include' => $row->id_detail_include_include,
-		'jumlah' => $row->jumlah,
-		'harga_total' => $row->harga_total,
-	    );
+              'id_detail_include' => $row->id_detail_include,
+              'id_detail_include_pemesanan' => $row->id_detail_include_pemesanan,
+
+              'foto_bukti' => $row->foto_bukti,
+              'nama_include' => $row->nama_include,
+
+              'id_detail_include_include' => $row->id_detail_include_include,
+              'jumlah' => $row->jumlah,
+              'harga_total' => $row->harga_total,
+          );
             $this->load->view('wo_detail_include/wo_detail_include_read', $data);
             $this->load->view('inc/footer-js-admin');
         } else {
@@ -69,15 +73,25 @@ class Wo_detail_include extends CI_Controller
 
     public function create() 
     {
+        $this->load->model('Wo_pemesanan_model');
+        $this->load->model('Wo_include_model');
+
+        $wo_pemesanan = $this->Wo_pemesanan_model->get_limit_data(999);
+        $wo_include = $this->Wo_include_model->get_limit_data(999);
+
+
+
         $data = array(
             'button' => 'Buat',
             'action' => site_url('wo_detail_include/create_action'),
-	    'id_detail_include' => set_value('id_detail_include'),
-	    'id_detail_include_pemesanan' => set_value('id_detail_include_pemesanan'),
-	    'id_detail_include_include' => set_value('id_detail_include_include'),
-	    'jumlah' => set_value('jumlah'),
-	    'harga_total' => set_value('harga_total'),
-	);
+            'id_detail_include' => set_value('id_detail_include'),
+            'id_detail_include_pemesanan' => set_value('id_detail_include_pemesanan'),
+            'id_detail_include_include' => set_value('id_detail_include_include'),
+            'jumlah' => set_value('jumlah'),
+            'harga_total' => set_value('harga_total'),
+            'wo_pemesanan_data' => $wo_pemesanan,
+            'wo_include_data' => $wo_include,
+        );
         $this->load->view('wo_detail_include/wo_detail_include_form', $data);
         $this->load->view('inc/footer-js-admin');
     }
@@ -90,11 +104,11 @@ class Wo_detail_include extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'id_detail_include_pemesanan' => $this->input->post('id_detail_include_pemesanan',TRUE),
-		'id_detail_include_include' => $this->input->post('id_detail_include_include',TRUE),
-		'jumlah' => $this->input->post('jumlah',TRUE),
-		'harga_total' => $this->input->post('harga_total',TRUE),
-	    );
+              'id_detail_include_pemesanan' => $this->input->post('id_detail_include_pemesanan',TRUE),
+              'id_detail_include_include' => $this->input->post('id_detail_include_include',TRUE),
+              'jumlah' => $this->input->post('jumlah',TRUE),
+              'harga_total' => $this->input->post('harga_total',TRUE),
+          );
 
             $this->Wo_detail_include_model->insert($data);
             $this->session->set_flashdata('pesan', 'Berhasil Tambah Data');
@@ -104,18 +118,26 @@ class Wo_detail_include extends CI_Controller
     
     public function update($id) 
     {
+        $this->load->model('Wo_pemesanan_model');
+        $this->load->model('Wo_include_model');
+
+        $wo_pemesanan = $this->Wo_pemesanan_model->get_limit_data(999);
+        $wo_include = $this->Wo_include_model->get_limit_data(999);
+        
         $row = $this->Wo_detail_include_model->get_by_id($id);
 
         if ($row) {
             $data = array(
                 'button' => 'Ubah',
                 'action' => site_url('wo_detail_include/update_action'),
-		'id_detail_include' => set_value('id_detail_include', $row->id_detail_include),
-		'id_detail_include_pemesanan' => set_value('id_detail_include_pemesanan', $row->id_detail_include_pemesanan),
-		'id_detail_include_include' => set_value('id_detail_include_include', $row->id_detail_include_include),
-		'jumlah' => set_value('jumlah', $row->jumlah),
-		'harga_total' => set_value('harga_total', $row->harga_total),
-	    );
+                'id_detail_include' => set_value('id_detail_include', $row->id_detail_include),
+                'id_detail_include_pemesanan' => set_value('id_detail_include_pemesanan', $row->id_detail_include_pemesanan),
+                'id_detail_include_include' => set_value('id_detail_include_include', $row->id_detail_include_include),
+                'jumlah' => set_value('jumlah', $row->jumlah),
+                'harga_total' => set_value('harga_total', $row->harga_total),
+                'wo_pemesanan_data' => $wo_pemesanan,
+                'wo_include_data' => $wo_include,
+            );
             $this->load->view('wo_detail_include/wo_detail_include_form', $data);
             $this->load->view('inc/footer-js-admin');
         } else {
@@ -131,11 +153,11 @@ class Wo_detail_include extends CI_Controller
             $this->update($this->input->post('id_detail_include', TRUE));
         } else {
             $data = array(
-		'id_detail_include_pemesanan' => $this->input->post('id_detail_include_pemesanan',TRUE),
-		'id_detail_include_include' => $this->input->post('id_detail_include_include',TRUE),
-		'jumlah' => $this->input->post('jumlah',TRUE),
-		'harga_total' => $this->input->post('harga_total',TRUE),
-	    );
+              'id_detail_include_pemesanan' => $this->input->post('id_detail_include_pemesanan',TRUE),
+              'id_detail_include_include' => $this->input->post('id_detail_include_include',TRUE),
+              'jumlah' => $this->input->post('jumlah',TRUE),
+              'harga_total' => $this->input->post('harga_total',TRUE),
+          );
 
             $this->Wo_detail_include_model->update($this->input->post('id_detail_include', TRUE), $data);
             $this->session->set_flashdata('pesan', 'Berhasil Ubah Data');
@@ -153,22 +175,22 @@ class Wo_detail_include extends CI_Controller
             redirect(site_url('wo_detail_include'));
         } else {
             show_error('Data tidak ditemukan atau hilang, hubungi administrator <br> <a href="javascript: history.go(-1)"> kembali ke ke halaman sebelumnya </a>');        }
-    }
+        }
 
-    public function _rules() 
-    {
-	$this->form_validation->set_rules('id_detail_include_pemesanan', 'id detail include pemesanan', 'trim|required');
-	$this->form_validation->set_rules('id_detail_include_include', 'id detail include include', 'trim|required');
-	$this->form_validation->set_rules('jumlah', 'jumlah', 'trim|required');
-	$this->form_validation->set_rules('harga_total', 'harga total', 'trim|required|numeric');
+        public function _rules() 
+        {
+         $this->form_validation->set_rules('id_detail_include_pemesanan', 'id detail include pemesanan', 'trim|required');
+         $this->form_validation->set_rules('id_detail_include_include', 'id detail include include', 'trim|required');
+         $this->form_validation->set_rules('jumlah', 'jumlah', 'trim|required|less_than[1000]');
+         $this->form_validation->set_rules('harga_total', 'harga total', 'trim|required|numeric');
 
-	$this->form_validation->set_rules('id_detail_include', 'id_detail_include', 'trim');
-	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
-    }
+         $this->form_validation->set_rules('id_detail_include', 'id_detail_include', 'trim');
+         $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+     }
 
-}
+ }
 
-/* End of file Wo_detail_include.php */
-/* Location: ./application/controllers/Wo_detail_include.php */
-/* Please DO NOT modify this information : */
-/* Generated : 2019-06-04 05:59:33 */
+ /* End of file Wo_detail_include.php */
+ /* Location: ./application/controllers/Wo_detail_include.php */
+ /* Please DO NOT modify this information : */
+ /* Generated : 2019-06-04 05:59:33 */

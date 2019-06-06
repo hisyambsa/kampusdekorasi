@@ -23,13 +23,13 @@
               <a class=" waves-effect" href="<?php echo base_url('admin') ?>"><i class="fas fa-home"></i> Beranda</a>
             </li>
             <?php if ($this->session->userdata('akses')==1): ?>
-              <li id="menu-item-43623" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children  menu-item-43623"><a class="collapsible-header waves-effect arrow-r"><i class="fab fa-css3"></i> Master User<i class="fa fa-angle-down rotate-icon"></i></a>
+              <li id="menu-item-43623" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children  menu-item-43623"><a class="collapsible-header waves-effect arrow-r"><i class="fab fa-css3"></i> Master Admin<i class="fa fa-angle-down rotate-icon"></i></a>
                <div class="collapsible-body"  style="display: block;"> 
                 <ul class="sub-menu">
                   <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
                     <a class=" waves-effect" href="<?php echo base_url('wo_akses') ?>"><i class="fas fa-user-tag"></i> Akses Level</a>
                     <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
-                      <a class=" waves-effect" href="<?php echo base_url('wo_admin') ?>"><i class="fas fa-user-friends"></i> User</a>
+                      <a class=" waves-effect" href="<?php echo base_url('wo_admin') ?>"><i class="fas fa-user-friends"></i> Admin</a>
                     </li>
                   </ul>
                 </div>
@@ -43,11 +43,14 @@
                   <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
                     <a class=" waves-effect" href="<?php echo base_url('wo_Include') ?>"><i class="fas fa-user-friends"></i> Include</a>
                   </li>
+                  <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
+                    <a class=" waves-effect" href="<?php echo base_url('wo_User') ?>"><i class="fas fa-user-friends"></i> User</a>
+                  </li>
                 </ul>
               </div>
             </li>
             <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
-              <a href="<?php echo base_url('pemesanan') ?>"><i class="fas fa-sign-out-alt"></i> Pemesanan</a>
+              <a href="<?php echo base_url('wo_pemesanan') ?>"><i class="fas fa-sign-out-alt"></i> Pemesanan</a>
             </li>
             <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
               <a href="<?php echo base_url('laporan') ?>"><i class="fas fa-sign-out-alt"></i> Laporan</a>

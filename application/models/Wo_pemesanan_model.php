@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+exit('No direct script access allowed');
 class Wo_pemesanan_model extends CI_Model
 {
 
@@ -16,6 +16,10 @@ class Wo_pemesanan_model extends CI_Model
     function get_all()
     {
         $this->db->order_by($this->id, $this->order);
+
+        $this->db->join('user', 'user.id_user = pemesanan.id_user_pemesanan');
+        $this->db->join('package', 'package.id_package = pemesanan.id_package_pemesanan');
+
         return $this->db->get($this->table)->result();
     }
 
@@ -23,22 +27,30 @@ class Wo_pemesanan_model extends CI_Model
     function get_by_id($id)
     {
         $this->db->where($this->id, $id);
+        $this->db->join('user', 'user.id_user = pemesanan.id_user_pemesanan');
+        $this->db->join('package', 'package.id_package = pemesanan.id_package_pemesanan');
+
         return $this->db->get($this->table)->row();
     }
     
     // get total rows
     function total_rows($q = NULL) {
         $this->db->like('id_pemesanan', $q);
-	$this->db->or_like('id_user_pemesanan', $q);
-	$this->db->or_like('id_package_pemesanan', $q);
-	$this->db->or_like('id_detail_include_pemesanan', $q);
-	$this->db->or_like('tanggal_pemesanan', $q);
-	$this->db->or_like('tanggal_booking', $q);
-	$this->db->or_like('total_uang_masuk', $q);
-	$this->db->or_like('total_uang_bayar', $q);
-	$this->db->or_like('foto_bukti', $q);
-	$this->db->or_like('status', $q);
-	$this->db->from($this->table);
+        $this->db->or_like('nama_user', $q);
+        $this->db->or_like('nama_package', $q);
+        $this->db->or_like('id_detail_include_pemesanan', $q);
+        $this->db->or_like('tanggal_pemesanan', $q);
+        $this->db->or_like('tanggal_booking', $q);
+        $this->db->or_like('total_uang_masuk', $q);
+        $this->db->or_like('total_uang_bayar', $q);
+        $this->db->or_like('foto_bukti', $q);
+        $this->db->or_like('status', $q);
+
+        $this->db->join('user', 'user.id_user = pemesanan.id_user_pemesanan');
+        $this->db->join('package', 'package.id_package = pemesanan.id_package_pemesanan');
+
+
+        $this->db->from($this->table);
         return $this->db->count_all_results();
     }
 
@@ -46,18 +58,22 @@ class Wo_pemesanan_model extends CI_Model
     function get_limit_data($limit, $start = 0, $q = NULL) {
         $this->db->order_by($this->id, $this->order);
         $this->db->like('id_pemesanan', $q);
-	$this->db->or_like('id_user_pemesanan', $q);
-	$this->db->or_like('id_package_pemesanan', $q);
-	$this->db->or_like('id_detail_include_pemesanan', $q);
-	$this->db->or_like('tanggal_pemesanan', $q);
-	$this->db->or_like('tanggal_booking', $q);
-	$this->db->or_like('total_uang_masuk', $q);
-	$this->db->or_like('total_uang_bayar', $q);
-	$this->db->or_like('foto_bukti', $q);
-	$this->db->or_like('status', $q);
-	$this->db->limit($limit, $start);
+        $this->db->or_like('nama_user', $q);
+        $this->db->or_like('nama_package', $q);
+        $this->db->or_like('id_detail_include_pemesanan', $q);
+        $this->db->or_like('tanggal_pemesanan', $q);
+        $this->db->or_like('tanggal_booking', $q);
+        $this->db->or_like('total_uang_masuk', $q);
+        $this->db->or_like('total_uang_bayar', $q);
+        $this->db->or_like('foto_bukti', $q);
+        $this->db->or_like('status', $q);
+
+        $this->db->join('user', 'user.id_user = pemesanan.id_user_pemesanan');
+        $this->db->join('package', 'package.id_package = pemesanan.id_package_pemesanan');
+        $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
+
 
     // insert data
     function insert($data)
@@ -84,4 +100,4 @@ class Wo_pemesanan_model extends CI_Model
 /* End of file Wo_pemesanan_model.php */
 /* Location: ./application/models/Wo_pemesanan_model.php */
 /* Please DO NOT modify this information : */
-/* Generated :2019-06-04 05:59:24 */
+/* Generated :2019-06-04 16:51:26 */

@@ -34,8 +34,7 @@ class Wo_user_model extends CI_Model
 	$this->db->or_like('tanggal_lahir', $q);
 	$this->db->or_like('alamat', $q);
 	$this->db->or_like('hp', $q);
-	$this->db->or_like('foto_ktp', $q);
-	$this->db->or_like('foto_kk', $q);
+	$this->db->or_like('foto_identitas', $q);
 	$this->db->from($this->table);
         return $this->db->count_all_results();
     }
@@ -49,8 +48,7 @@ class Wo_user_model extends CI_Model
 	$this->db->or_like('tanggal_lahir', $q);
 	$this->db->or_like('alamat', $q);
 	$this->db->or_like('hp', $q);
-	$this->db->or_like('foto_ktp', $q);
-	$this->db->or_like('foto_kk', $q);
+	$this->db->or_like('foto_identitas', $q);
 	$this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
@@ -80,4 +78,4 @@ class Wo_user_model extends CI_Model
 /* End of file Wo_user_model.php */
 /* Location: ./application/models/Wo_user_model.php */
 /* Please DO NOT modify this information : */
-/* Generated :2019-06-04 05:59:28 */
+/* Generated :2019-06-04 16:50:29 */

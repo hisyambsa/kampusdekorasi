@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+exit('No direct script access allowed');
 class Wo_detail_include_model extends CI_Model
 {
 
@@ -16,6 +16,8 @@ class Wo_detail_include_model extends CI_Model
     function get_all()
     {
         $this->db->order_by($this->id, $this->order);
+        $this->db->join('pemesanan', 'pemesanan.id_pemesanan = detail_include.id_detail_include_pemesanan');
+        $this->db->join('include', 'include.id_include = detail_include.id_detail_include_include');
         return $this->db->get($this->table)->result();
     }
 
@@ -23,51 +25,63 @@ class Wo_detail_include_model extends CI_Model
     function get_by_id($id)
     {
         $this->db->where($this->id, $id);
+
+        $this->db->join('pemesanan', 'pemesanan.id_pemesanan = detail_include.id_detail_include_pemesanan');
+        $this->db->join('include', 'include.id_include = detail_include.id_detail_include_include');
+        
         return $this->db->get($this->table)->row();
     }
     
     // get total rows
     function total_rows($q = NULL) {
         $this->db->like('id_detail_include', $q);
-	$this->db->or_like('id_detail_include_pemesanan', $q);
-	$this->db->or_like('id_detail_include_include', $q);
-	$this->db->or_like('jumlah', $q);
-	$this->db->or_like('harga_total', $q);
-	$this->db->from($this->table);
+        $this->db->or_like('foto_bukti', $q);
+        $this->db->or_like('nama_include', $q);
+        $this->db->or_like('jumlah', $q);
+        $this->db->or_like('harga_total', $q);
+
+        $this->db->join('pemesanan', 'pemesanan.id_pemesanan = detail_include.id_detail_include_pemesanan');
+        $this->db->join('include', 'include.id_include = detail_include.id_detail_include_include');
+
+        $this->db->from($this->table);
         return $this->db->count_all_results();
     }
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
-        $this->db->order_by($this->id, $this->order);
-        $this->db->like('id_detail_include', $q);
-	$this->db->or_like('id_detail_include_pemesanan', $q);
-	$this->db->or_like('id_detail_include_include', $q);
-	$this->db->or_like('jumlah', $q);
-	$this->db->or_like('harga_total', $q);
-	$this->db->limit($limit, $start);
-        return $this->db->get($this->table)->result();
-    }
+       $this->db->order_by($this->id, $this->order);
+       $this->db->like('id_detail_include', $q);
+       $this->db->or_like('foto_bukti', $q);
+       $this->db->or_like('nama_include', $q);
+       $this->db->or_like('jumlah', $q);
+       $this->db->or_like('harga_total', $q);
 
+       $this->db->join('pemesanan', 'pemesanan.id_pemesanan = detail_include.id_detail_include_pemesanan');
+       $this->db->join('include', 'include.id_include = detail_include.id_detail_include_include');
+       $this->db->limit($limit, $start);
+       return $this->db->get($this->table)->result();
+   }
+
+   
     // insert data
-    function insert($data)
-    {
-        $this->db->insert($this->table, $data);
-    }
+   function insert($data)
+   {
+    $this->db->insert($this->table, $data);
+}
 
     // update data
-    function update($id, $data)
-    {
-        $this->db->where($this->id, $id);
-        $this->db->update($this->table, $data);
-    }
+function update($id, $data)
+{
+    $this->db->where($this->id, $id);
+    $this->db->update($this->table, $data);
+}
 
     // delete data
-    function delete($id)
-    {
-        $this->db->where($this->id, $id);
-        $this->db->delete($this->table);
-    }
+function delete($id)
+{
+    $this->db->where($this->id, $id);
+    $this->db->delete($this->table);
+}
 
 }
 

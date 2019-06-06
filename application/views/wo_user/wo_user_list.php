@@ -40,8 +40,7 @@
 		<th class="th-sm">Tanggal Lahir</th>
 		<th class="th-sm">Alamat</th>
 		<th class="th-sm">Hp</th>
-		<th class="th-sm">Foto Ktp</th>
-		<th class="th-sm">Foto Kk</th>
+		<th class="th-sm">Foto Identitas</th>
 		<th class="th-sm">Aksi</th>
             </tr><?php
             foreach ($wo_user_data as $wo_user)
@@ -54,8 +53,9 @@
 			<td><?php echo $wo_user->tanggal_lahir ?></td>
 			<td><?php echo $wo_user->alamat ?></td>
 			<td><?php echo $wo_user->hp ?></td>
-			<td><?php echo $wo_user->foto_ktp ?></td>
-			<td><?php echo $wo_user->foto_kk ?></td><td style="text-align:center" width="120px">
+			<!-- <td><?php echo $wo_user->foto_identitas ?></td> -->
+            <td><a href="<?php echo base_url('uploads/identitas/'.$wo_user->foto_identitas) ?>" target="_blank"><img class="zoom" height="30" width="30" src="<?php echo base_url('uploads/identitas/'.$wo_user->foto_identitas) ?>" alt="<?php echo $wo_user->foto_identitas ?>"></a></td>
+            <td style="text-align:center" width="120px">
                     <a href="<?php echo base_url().'wo_user/read/'.$wo_user->id_user ?>"  class="btn btn-sm btn-info" data-toggle="tooltip" title="Lihat">
                      <span class="fa fa-eye"></span>
                       <a onclick="redirectPesan('info','mohon tunggu...')" href="<?php echo base_url().'wo_user/update/'.$wo_user->id_user ?>"  class="btn btn-sm btn-warning" data-toggle="tooltip" title="Ubah">

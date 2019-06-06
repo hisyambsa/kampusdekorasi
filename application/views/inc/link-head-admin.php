@@ -28,6 +28,10 @@
   <link rel='stylesheet' href='<?php echo base_url('assets/node_modules/fullcalendar/dist/fullcalendar.css'); ?>' />
   <link rel='stylesheet' href='<?php echo base_url('assets/jquery-ui/jquery-ui.css'); ?>' />
 
+<link rel="stylesheet" href="<?php echo base_url('assets/pickadate/lib/themes/classic.date.css') ?>">
+
+
+
   <script src="<?php echo base_url('assets/node_modules/sweetalert2/dist/sweetalert2.all.js') ?>"></script>
 
 
