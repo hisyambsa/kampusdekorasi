@@ -68,7 +68,7 @@
 
 
 <script>
-  function redirectPesan(type,pesan) {
+  function redirectPesan(type='error',pesan) {
     Swal.fire({
       type: type,
       title: pesan,

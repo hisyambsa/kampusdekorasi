@@ -56,6 +56,7 @@ class Wo_package extends CI_Controller
             $data = array(
               'id_package' => $row->id_package,
               'nama_package' => $row->nama_package,
+              'jenis_package' => $row->jenis_package,
               'detail_package' => $row->detail_package,
               'harga_package' => $row->harga_package,
               'foto_package' => $row->foto_package,
@@ -74,6 +75,7 @@ class Wo_package extends CI_Controller
             'action' => site_url('wo_package/create_action'),
             'id_package' => set_value('id_package'),
             'nama_package' => set_value('nama_package'),
+            'jenis_package' => set_value('jenis_package'),
             'detail_package' => set_value('detail_package'),
             'harga_package' => set_value('harga_package'),
             'foto_package' => set_value('foto_package'),
@@ -101,6 +103,7 @@ class Wo_package extends CI_Controller
             }else{
                 $data = array(
                   'nama_package' => $this->input->post('nama_package',TRUE),
+                  'jenis_package' => $this->input->post('jenis_package',TRUE),
                   'detail_package' => $this->input->post('detail_package',TRUE),
                   'harga_package' => $this->input->post('harga_package',TRUE),
                   'foto_package' => $foto_package,
@@ -123,6 +126,7 @@ class Wo_package extends CI_Controller
                 'action' => site_url('wo_package/update_action'),
                 'id_package' => set_value('id_package', $row->id_package),
                 'nama_package' => set_value('nama_package', $row->nama_package),
+                'jenis_package' => set_value('jenis_package', $row->jenis_package),
                 'detail_package' => set_value('detail_package', $row->detail_package),
                 'harga_package' => set_value('harga_package', $row->harga_package),
                 'foto_package' => set_value('foto_package', $row->foto_package),
@@ -151,6 +155,7 @@ class Wo_package extends CI_Controller
             }else{        
                 $data = array(
                   'nama_package' => $this->input->post('nama_package',TRUE),
+                  'jenis_package' => $this->input->post('jenis_package',TRUE),
                   'detail_package' => $this->input->post('detail_package',TRUE),
                   'harga_package' => $this->input->post('harga_package',TRUE),
                   'foto_package' => $foto_package,

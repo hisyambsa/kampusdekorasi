@@ -1,4 +1,3 @@
-<?php var_dump($wo_detail_include_data) ?>
         <div class="row">
             <div class="col-md-1 text-center mt-2">
                 <button class="btn btn-flat btn-rounded hoverable btn-kembali"><h4><i class="fas fa-chevron-circle-left"></i></h4></button>

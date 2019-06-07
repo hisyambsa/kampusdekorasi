@@ -8,15 +8,18 @@
       "<?php $dataJenisPesan = substr($pesan, 0,8); ?>"
       "<?php if ($dataJenisPesan=='Berhasil') { ?>"
       "<?php $jenisPesan ='success'; ?>"
-      "<?php }  ?>"      
+      "<?php }else if ($this->session->flashdata('jenisPesan')!==NULL){ ?>"
+      "<?php $jenisPesan = $this->session->flashdata('jenisPesan'); ?>"
+      "<?php }else { ?> "
+      "<?php $jenisPesan ='error' ?>"
+      "<?php } ?>" 
       redirectPesan('<?php echo $jenisPesan ?>','<?php echo $pesan ?>');
-      "<?php endif ?>"
+      "<?php endif ?>"     
+      
     });
   });
+
 </script>
-
-
-
 <script src="<?php echo base_url('assets/node_modules/mdbootstrap/js/file-upload.js') ?>"></script>  
 <script src="<?php echo base_url('assets/node_modules/jquery-validation/dist/jquery.validate.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/node_modules/jquery-validation/dist/localization/messages_id.js') ?>"></script>
@@ -59,11 +62,6 @@ Ps.initialize(sideNavScrollbar);
 
 <script>
   $('#login_register').popover('');
-</script>
-<script>
-  $(window).on("load", function () {
-    $('#mdb-preloader').fadeOut('slow');
-  });
 </script>
 <!-- ./ container -->
 

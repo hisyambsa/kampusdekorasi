@@ -23,3 +23,26 @@ body, html {
 .side-nav .logo-wrapper {
     height: 180px;
 }
+
+.w-100{
+  max-height: 600px;
+}
+
+.sn-bg-1 {
+    background-image: url("../../img/background_sidebar.jpg");
+}
+.sn-bg-2 {
+    background-image: url("../../img/background_sidebar.jpg");
+}
+.sn-bg-3 {
+    background-image: url("../../img/background_sidebar.jpg");
+}
+.sn-bg-4 {
+    background-image: url("../../img/background_sidebar.jpg");
+}
+.sn-bg-5 {
+    background-image: url("../../img/background_sidebar.jpg");
+}
+.sn-bg-6 {
+    background-image: url("../../img/background_sidebar.jpg");
+}

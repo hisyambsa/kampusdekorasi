@@ -33,7 +33,7 @@
         }
       }
       .bgberanda {
-        background-image: url("<?php echo base_url()?>img/palapa-ring-opacity.png");
+        background-image: url("<?php echo base_url()?>img/background_beranda_carousel.jpg");
         /* The image used */
         background-color: grey;
         /* Full height */

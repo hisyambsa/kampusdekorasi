@@ -33,9 +33,9 @@ class Login extends CI_Controller {
 		$loginAdmin = $this->login_model->loginAdmin($this->input->post('username'), $this->input->post('password'));
 		$ambilDataLogin   = $this->login_model->data_loginAdmin($this->input->post('username'));
 
-		// $login = $this->login_model->login($this->input->post('username'), $this->input->post('password'));
-		// $ambilData   = $this->login_model->data_login($this->input->post('username'));
-		$login = false;
+		$login = $this->login_model->login($this->input->post('username'), $this->input->post('password'));
+		$ambilData   = $this->login_model->data_login($this->input->post('username'));
+
 		$ambildata = array('' => '', );
 
 		if ($loginAdmin) {
@@ -49,24 +49,25 @@ class Login extends CI_Controller {
 				'id_admin' => $ambilDataLogin->id_admin,
 				'username' => $ambilDataLogin->username,
 				'akses' => $ambilDataLogin->id_akses,
+				'logged' => true
 			);
 			$this->session->set_userdata($data);
 
 			redirect('admin','refresh');
 		}elseif ($login) {
 			$data = array(
-				'id_user' => $ambilData->id_pegawai,
-				'nik' => $ambilData->NIK,
-				'username' => $ambilData->nama,
-				'akses' => '0',
+				'id_user' => $ambilData->id_user,
+				'nama' => $ambilData->nama_user,
+				'alamat' => $ambilData->alamat,
+				'hp' => $ambilData->alamat,
+				'logged' => true
 			);
 			$this->session->set_userdata($data);
-			$this->session->set_flashdata('pesan', 'Berhasil Masuk');
-			redirect('admin','refresh');
+			$this->session->set_flashdata('pesan', 'Berhasil Login');
+			redirect('beranda','refresh');
 		}else {
-			$this->session->set_flashdata('pesan', 'gagal Masuk');
-			redirect('login','refresh');
-			// redirect(site_url('wo_admin'));
+			$this->session->set_flashdata('pesan', 'Gagal Login');
+			redirect('beranda','refresh');
 		}
 	}
 	public function beranda()

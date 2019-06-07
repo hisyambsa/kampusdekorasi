@@ -8,6 +8,20 @@
                 <input type="text" class="form-control" name="nama_package" id="Masukan nama_package" placeholder="Nama Package" value="<?php echo $nama_package; ?>" />
             </div>
             <div class="form-group">
+                <label for="varchar">Jenis Package <?php echo form_error('jenis_package') ?></label>
+                <!-- <input type="text" class="form-control" name="jenis_package" id="Masukan jenis_package" placeholder="Jenis Package" value="<?php echo $jenis_package; ?>" /> -->
+                <select 
+                required class="browser-default custom-select" name="jenis_package" id="jenis_package">
+                <option value="">Pilih Jenis Package</option>
+                <option value="1" <?php if ($jenis_package==1) {
+                  ?> selected <?php
+                } ?>>Gedung / Aula</option>
+                <option value="2" <?php if ($jenis_package==2) {
+                  ?> selected <?php
+                } ?>>Rumahan</option>
+        </select>
+            </div>
+            <div class="form-group">
                 <label for="detail_package">Detail Package <?php echo form_error('detail_package') ?></label>
                 <textarea class="form-control" rows="3" name="detail_package" id="detail_package" placeholder="Detail Package"><?php echo $detail_package; ?></textarea>
             </div>

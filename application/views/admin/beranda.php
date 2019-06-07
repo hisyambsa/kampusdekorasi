@@ -9,7 +9,6 @@
         <div class="carousel-3d-item"><img src="<?php echo base_url('img/slider-3d/img-4.jpg') ?>" alt="Slide4"></div>
         <div class="carousel-3d-item"><img src="<?php echo base_url('img/slider-3d/img-5.jpg') ?>" alt="Slide5"></div>
         <div class="carousel-3d-item"><img src="<?php echo base_url('img/slider-3d/img-6.jpg') ?>" alt="Slide6"></div>
-        <div class="carousel-3d-item"><img src="<?php echo base_url('img/slider-3d/img-7.jpg') ?>" alt="Slide7"></div>
       </div>
       
     </div>

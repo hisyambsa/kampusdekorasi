@@ -13,7 +13,7 @@
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
             <div class="view">
-              <img class="d-block w-100" src="<?php echo base_url('img/slider-img/slider_1.jpg') ?>" alt="First slide">
+              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider_1.jpg') ?>" alt="First slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
@@ -24,7 +24,7 @@
           <div class="carousel-item">
             <!--Mask color-->
             <div class="view">
-              <img class="d-block w-100" src="<?php echo base_url('img/slider-img/slider_2.jpg') ?>" alt="Second slide">
+              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider_2.jpg') ?>" alt="Second slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
@@ -34,8 +34,8 @@
           </div>
           <div class="carousel-item">
             <!--Mask color-->
-            <div class="view">slide
-              <img class="d-block w-100" src="<?php echo base_url('img/slider-img/slider_3.jpg') ?>" alt="Third ">
+            <div class="view">
+              <img class="d-block w-100 maxHeight600 " src="<?php echo base_url('img/slider-img/slider_3.jpg') ?>" alt="Third slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
@@ -68,7 +68,7 @@
         <h3 class="text-center text-uppercase font-weight-bold my-4 mt-2 ml-3 mr-3 wow fadeIn" data-wow-delay="0.2s">Kampus Dekorasi</h3>
         <!-- Text -->
         <p class="grey-text ml-5 mr-5 mb-5 text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quae rem totam cupiditate, perferendis natus, sit, pariatur error soluta voluptate numquam adipisci deleniti provident tenetur animi. Provident doloribus iste animi dolorum quasi nisi itaque ipsa, corporis maxime, facilis incidunt nemo blanditiis assumenda modi, voluptas ab tempore? Tempore esse eveniet, neque ipsum necessitatibus soluta, quas reprehenderit deleniti ea, fugiat sequi repudiandae fugit vitae voluptas voluptates mollitia assumenda alias perspiciatis odit. Impedit, qui recusandae eveniet cumque perferendis laboriosam, consectetur, amet atque hic assumenda expedita consequatur voluptatem error possimus ab dignissimos laudantium! Quisquam iusto voluptatibus debitis sunt aperiam inventore. Ullam quam veniam dolorum. <br><br>
+          Kampus Dekorasi merupakan salah satu unit usaha yang menyediakan pelayanan jasa Dekorasi pernikahan yang.... #mentok ga ada kata masa akuuuuuu.......... <br><br>
 
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea laboriosam, blanditiis ipsum et quidem iusto, voluptatem optio minus soluta delectus itaque voluptate! Quod cumque quis laboriosam architecto cum qui, vero eius ipsum sint inventore culpa sit eveniet nisi assumenda magni tenetur, nobis dicta hic rem quidem vel. Qui, adipisci, eum.
         </p>
@@ -470,30 +470,3 @@
 </footer>
 <!--Footer-->
 
-<!-- SCRIPTS -->
-
-
-
-<script>
-    // initialize scrollspy
-    $('body').scrollspy({
-      target: '.dotted-scrollspy'
-    });
-
-    // initialize lightbox
-    $(function () {
-      $("#mdb-lightbox-ui ").load("mdb-addons/mdb-lightbox-ui.html ");
-    });
-
-    /* WOW.js init */
-    new WOW().init();
-
-    $('.navbar-collapse a').click(function () {
-      $(".navbar-collapse ").collapse('hide');
-    });
-
-  </script>
-
-  <!-- </body> -->
-
-  <!-- </html> -->
