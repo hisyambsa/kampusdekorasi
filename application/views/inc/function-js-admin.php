@@ -1,45 +1,50 @@
 <script>
 
-  $('.btn_pass').click(function() {
-    let data = $(this).data("value");
-    $('#idUpdate').val(data);
-  });
+  $('#form_submit').submit(function(e) {
 
-    $('.btn_passPegawai').click(function() {
-    let data = $(this).data("value");
-    let dataHref = $(this).data("href");
 
-    $('#idUpdatePassPegawai').val(data);
-    $('#btn-ubahPass').attr('href', dataHref);
-    
-  });
+    let id_user_pemesanan =$('#id_user_pemesanan').val();
+    let id_package_pemesanan=$('#id_package_pemesanan').val();
 
-  $('#klikPassword').on('click', function() {
+    let tanggal_booking =$('#tanggal_booking').val();
+    let tanggal_pemesanan=$('#id_package_pemesanan').val();
 
-    let idUpdate =$('#idUpdate').val();
-    let pass=$('#passAdmin').val();
-    if (pass!='') {
-      cekPasswordAdmin(idUpdate, pass);
-    }else{
-      alert('password tidak boleh kosong');
-    }
-  });
 
-  function cekPasswordAdmin(idUpdate,pass) {
+
+
+
+      if (id_package_pemesanan=='') {
+        alert('Belum ada package terpilih');
+      }else if (tanggal_booking=='') {
+        alert('tanggal Booking masih kosong')
+      }else{
+
+    e.preventDefault(); 
+
     $.ajax({
-      url: "<?php echo base_url("ajax/cekPasswordAdmin")?>",
+      url: "<?php echo base_url("ajax/insertPemesanan")?>",
             type: "post", // To protect sensitive data
-            data: {
-              pass: pass
-               //and any other variables you want to pass via POST
-             },
-             success:function(data){
-              let hasil = data;
-              if (hasil =='true') {
+            // data: {
+            //   id_user_pemesanan: id_user_pemesanan,
+            //   id_package_pemesanan: id_package_pemesanan,
+            //   tanggal_booking: tanggal_booking
+            //    //and any other variables you want to pass via POST
+            //  },
+
+            data:new FormData(this),
+            processData:false,
+            contentType:false,
+            cache:false,
+            async:false,  
+
+            success:function(dataPemesanan){
+              let hasil = dataPemesanan;
+              if (hasil =='berhasil') {
                 // Simulate an HTTP redirect:
-                window.location.replace(idUpdate);
-              }else if(hasil=='false'){
-                alert('Password Salah');
+                // alert('berhasil simpan');
+                window.location.replace('pemesanan');
+              }else if(hasil!='berhasil'){
+                alert(hasil);
               }
 
             },error: function() {
@@ -47,5 +52,18 @@
             }
           });
     // $(".form-group").removeClass('d-none');
-  }
+
+
+        }
+
+  });
+
+$('#modalBooking').on('show.bs.modal', function (event) {
+
+ var button = $(event.relatedTarget);
+
+  let dataHarga = button.data("harga");
+  $('#total_uang_bayar').val(dataHarga);
+})
+
 </script>
