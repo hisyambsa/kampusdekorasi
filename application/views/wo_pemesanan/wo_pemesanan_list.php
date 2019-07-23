@@ -46,7 +46,8 @@
             <th class="th-sm">Total Uang Bayar</th>
             <th class="th-sm">Foto Bukti</th>
             <th class="th-sm">Aksi</th>
-            </tr><?php
+            </tr>
+            <?php
             foreach ($wo_pemesanan_data as $wo_pemesanan)
             {
                 ?>
@@ -76,10 +77,13 @@
                 <td style="text-align:center" width="120px">
                     <a href="<?php echo base_url().'wo_pemesanan/read/'.$wo_pemesanan->id_pemesanan ?>"  class="btn btn-sm btn-info" data-toggle="tooltip" title="Lihat">
                      <span class="fa fa-eye"></span>
+                 </a>
                      <a onclick="redirectPesan('info','mohon tunggu...')" href="<?php echo base_url().'wo_pemesanan/update/'.$wo_pemesanan->id_pemesanan ?>"  class="btn btn-sm btn-warning" data-toggle="tooltip" title="Ubah">
                         <span class="fa fa-edit"></span>
+                    </a>
                         <a onclick="return confirmHapus('Hapus','anda yakin akan menghapus data?','<?php echo 'wo_pemesanan/delete/'.$wo_pemesanan->id_pemesanan ?>')" class="btn btn-sm btn-danger" data-toggle="tooltip" title="Hapus">
                           <span class="fa fa-trash"></span>
+                      </a>
                       </td>
                   </tr>
                   <?php

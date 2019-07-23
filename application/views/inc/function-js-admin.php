@@ -1,50 +1,45 @@
 <script>
 
-  $('#form_submit').submit(function(e) {
+  $('.btn_pass').click(function() {
+    let data = $(this).data("value");
+    $('#idUpdate').val(data);
+  });
 
+    $('.btn_passPegawai').click(function() {
+    let data = $(this).data("value");
+    let dataHref = $(this).data("href");
 
-    let id_user_pemesanan =$('#id_user_pemesanan').val();
-    let id_package_pemesanan=$('#id_package_pemesanan').val();
+    $('#idUpdatePassPegawai').val(data);
+    $('#btn-ubahPass').attr('href', dataHref);
+    
+  });
 
-    let tanggal_booking =$('#tanggal_booking').val();
-    let tanggal_pemesanan=$('#id_package_pemesanan').val();
+  $('#klikPassword').on('click', function() {
 
+    let idUpdate =$('#idUpdate').val();
+    let pass=$('#passAdmin').val();
+    if (pass!='') {
+      cekPasswordAdmin(idUpdate, pass);
+    }else{
+      alert('password tidak boleh kosong');
+    }
+  });
 
-
-
-
-      if (id_package_pemesanan=='') {
-        alert('Belum ada package terpilih');
-      }else if (tanggal_booking=='') {
-        alert('tanggal Booking masih kosong')
-      }else{
-
-    e.preventDefault(); 
-
+  function cekPasswordAdmin(idUpdate,pass) {
     $.ajax({
-      url: "<?php echo base_url("ajax/insertPemesanan")?>",
+      url: "<?php echo base_url("ajax/cekPasswordAdmin")?>",
             type: "post", // To protect sensitive data
-            // data: {
-            //   id_user_pemesanan: id_user_pemesanan,
-            //   id_package_pemesanan: id_package_pemesanan,
-            //   tanggal_booking: tanggal_booking
-            //    //and any other variables you want to pass via POST
-            //  },
-
-            data:new FormData(this),
-            processData:false,
-            contentType:false,
-            cache:false,
-            async:false,  
-
-            success:function(dataPemesanan){
-              let hasil = dataPemesanan;
-              if (hasil =='berhasil') {
+            data: {
+              pass: pass
+               //and any other variables you want to pass via POST
+             },
+             success:function(data){
+              let hasil = data;
+              if (hasil =='true') {
                 // Simulate an HTTP redirect:
-                // alert('berhasil simpan');
-                window.location.replace('pemesanan');
-              }else if(hasil!='berhasil'){
-                alert(hasil);
+                window.location.replace(idUpdate);
+              }else if(hasil=='false'){
+                alert('Password Salah');
               }
 
             },error: function() {
@@ -52,18 +47,5 @@
             }
           });
     // $(".form-group").removeClass('d-none');
-
-
-        }
-
-  });
-
-$('#modalBooking').on('show.bs.modal', function (event) {
-
- var button = $(event.relatedTarget);
-
-  let dataHarga = button.data("harga");
-  $('#total_uang_bayar').val(dataHarga);
-})
-
+  }
 </script>
