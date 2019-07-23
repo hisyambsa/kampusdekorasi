@@ -1,14 +1,6 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-/*
-<!-- .................................. -->
-<!-- ...........COPYRIGHT ............. -->
-<!-- Authors : Hisyam Husein .......... -->
-<!-- Email : hisyam.husein@gmail.com .. -->
-<!-- About : hisyam.ismul.com ......... -->
-<!-- Instagram : @hisyambsa............ -->
-<!-- .................................. -->
-*/
+
 class wo_Admin_model extends CI_Model
 {
 

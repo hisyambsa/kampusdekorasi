@@ -7,7 +7,7 @@
 
 		<!-- Card image -->
 		<div class="view view-cascade overlay">
-			<img class="card-img-top" height="300" width="300" src="<?php echo base_url('img/syarat_ketentuan.jpg') ?>" alt="Card image cap">
+			<img class="card-img-top" height="300" width="300" src="<?php echo base_url('img/syarat.jpg') ?>" alt="Card image cap">
 			<a href="#!">
 				<div class="mask rgba-white-slight"></div>
 			</a>

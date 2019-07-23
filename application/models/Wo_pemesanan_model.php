@@ -76,7 +76,7 @@ class Wo_pemesanan_model extends CI_Model
 
     // get total rows and where
     function total_rows_pemesanan($q = NULL, $user) {
-        $this->db->like('id_pemesanan', $q);
+        // $this->db->like('id_pemesanan', $q);
         // $this->db->or_like('nama_user', $q);
         // $this->db->or_like('nama_package', $q);
         // $this->db->or_like('id_detail_include_pemesanan', $q);
@@ -119,7 +119,32 @@ class Wo_pemesanan_model extends CI_Model
         return $this->db->get($this->table)->result();
     }
 
+    // get total rows
+    function total_rows_laporan($first_date, $second_date,$jenisLaporan) {
+        $this->db->where($jenisLaporan.'>=', $first_date);
+        $this->db->where($jenisLaporan.'<=', $second_date);
 
+        $this->db->join('user', 'user.id_user = pemesanan.id_user_pemesanan');
+        $this->db->join('package', 'package.id_package = pemesanan.id_package_pemesanan');
+
+
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+    // get data with limit and search
+    function get_limit_data_laporan($limit,$first_date, $second_date,$jenisLaporan) {
+        $this->db->order_by($jenisLaporan, $this->order);
+
+        $this->db->where($jenisLaporan.'>=', $first_date);
+        $this->db->where($jenisLaporan.'<=', $second_date);
+
+        $this->db->join('user', 'user.id_user = pemesanan.id_user_pemesanan');
+        $this->db->join('package', 'package.id_package = pemesanan.id_package_pemesanan');
+
+        $this->db->limit($limit, 0);
+        return $this->db->get($this->table)->result();
+    }
 
     // insert data
     function insert($data)
