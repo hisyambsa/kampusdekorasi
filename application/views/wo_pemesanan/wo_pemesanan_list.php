@@ -4,12 +4,12 @@
         <button class="btn btn-flat btn-rounded hoverable btn-kembali"><h4><i class="fas fa-chevron-circle-left"></i></h4></button>
     </div>
     <div class="col-md-3 text-center mt-2">
-        <?php echo anchor(site_url('wo_pemesanan/create'),'Buat Pemesanan', 'class="btn btn-primary btn-rounded d-inline"'); ?>
+        <?php echo anchor(site_url('wo_pemesanan/create'),'Buat Wo_pemesanan', 'class="btn btn-primary btn-rounded d-inline"'); ?>
         <br>
         <br>
     </div>
     <div class="col-md-4 text-center">
-        <h2 style="margin-top:0px">Daftar Pemesanan</h2>
+        <h2 style="margin-top:0px">Daftar Wo_pemesanan</h2>
 
     </div>
     <div class="col-md-4 text-right">
@@ -37,14 +37,14 @@
             <th class="th-sm">No</th>
             <th class="th-sm">Status</th>
 
-            <th class="th-sm">Nama Pemesan</th>
-            <th class="th-sm">Nama Package</th>
+            <th class="th-sm">Nama User Pemesanan</th>
+            <th class="th-sm">Nama Package Pemesanan</th>
             <!-- <th class="th-sm">Id Detail Include Pemesanan</th> -->
             <th class="th-sm">Tanggal Pemesanan</th>
             <th class="th-sm">Tanggal Booking</th>
-            <!-- <th class="th-sm">Total Uang Masuk</th> -->
-            <!-- <th class="th-sm">Total Uang Bayar</th> -->
-            <!-- <th class="th-sm">Foto Bukti</th> -->
+            <th class="th-sm">Total Uang Masuk</th>
+            <th class="th-sm">Total Uang Bayar</th>
+            <th class="th-sm">Foto Bukti</th>
             <th class="th-sm">Aksi</th>
             </tr><?php
             foreach ($wo_pemesanan_data as $wo_pemesanan)
@@ -55,13 +55,13 @@
                    <td>
 
                     <?php if ($wo_pemesanan->status==1) {
-                        echo '<button class="btn-sm btn btn-warning">Menunggu Konfirmasi</button>';
+                        echo "belum bayar";
                     }else if ($wo_pemesanan->status==2) {
-                        echo "Menunggu Pelunasan";
+                        echo "sudah bayar dp";
                     }else if ($wo_pemesanan->status==3) {
-                        echo '<button class="btn-sm btn btn-success">Menunggu Konfirmasi Pelunasan</button>';
+                        echo "sudah konfirmasi dp";
                     }elseif ($wo_pemesanan->status==4) {
-                        echo "Lunas dan Selesai";
+                        echo "sudah bayar";
                     }else {echo "status tidak terdefinisi";}?>
 
                 </td>
@@ -70,9 +70,9 @@
                 <!-- <td><?php echo $wo_pemesanan->id_detail_include_pemesanan ?></td> -->
                 <td><?php echo $wo_pemesanan->tanggal_pemesanan ?></td>
                 <td><?php echo $wo_pemesanan->tanggal_booking ?></td>
-                <!-- <td><?php echo $wo_pemesanan->total_uang_masuk ?></td> -->
-                <!-- <td><?php echo $wo_pemesanan->total_uang_bayar ?></td> -->
-                <!-- <td><a href="<?php echo base_url('uploads/bukti/'.$wo_pemesanan->foto_bukti) ?>" target="_blank"><img class="zoom" height="30" width="30" src="<?php echo base_url('uploads/bukti/'.$wo_pemesanan->foto_bukti) ?>" alt="<?php echo $wo_pemesanan->foto_bukti ?>"></a></td> -->
+                <td><?php echo $wo_pemesanan->total_uang_masuk ?></td>
+                <td><?php echo $wo_pemesanan->total_uang_bayar ?></td>
+                <td><a href="<?php echo base_url('uploads/bukti/'.$wo_pemesanan->foto_bukti) ?>" target="_blank"><img class="zoom" height="30" width="30" src="<?php echo base_url('uploads/bukti/'.$wo_pemesanan->foto_bukti) ?>" alt="<?php echo $wo_pemesanan->foto_bukti ?>"></a></td>
                 <td style="text-align:center" width="120px">
                     <a href="<?php echo base_url().'wo_pemesanan/read/'.$wo_pemesanan->id_pemesanan ?>"  class="btn btn-sm btn-info" data-toggle="tooltip" title="Lihat">
                      <span class="fa fa-eye"></span>
