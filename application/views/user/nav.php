@@ -27,7 +27,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/include_package') ?>" data-offset="100">Include</a>
+            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/include') ?>" data-offset="100">Include</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/syarat_ketentuan') ?>" data-offset="100">Syarat dan Ketentuan</a>
@@ -56,7 +56,7 @@
                   <br> 
                   <input type='password' name='password' placeholder='Tangggal Lahir' class='form-control' maxlength='10'>
                   <br>
-                  <button type='submit' class='btn btn-primary btn-block'>» Masuk </button> </form>
+                  <button type='submit' class='btn btn-primary btn-block'>» Masuk </button> 
                   &nbsp
                   <a href='<?php echo base_url('beranda/pendaftaran') ?>'><button type='' class='btn btn-success btn-block'>» Pendaftaran </button></a>                         
                 </div>

@@ -198,7 +198,7 @@ class Beranda extends CI_Controller {
 		$this->load->view('_adds-on/upload');
 	}
 
-	public function include_package()
+	public function include()
 	{
 		$data = array(
 			'judul' => 'Wo Dekorasi', 
