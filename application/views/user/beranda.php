@@ -13,7 +13,7 @@
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
             <div class="view">
-              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider_1.jpg') ?>" alt="First slide">
+              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider1.jpg') ?>" alt="First slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
@@ -24,7 +24,7 @@
           <div class="carousel-item">
             <!--Mask color-->
             <div class="view">
-              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider_2.jpg') ?>" alt="Second slide">
+              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider2.jpg') ?>" alt="Second slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
@@ -35,7 +35,7 @@
           <div class="carousel-item">
             <!--Mask color-->
             <div class="view">
-              <img class="d-block w-100 maxHeight600 " src="<?php echo base_url('img/slider-img/slider_3.jpg') ?>" alt="Third slide">
+              <img class="d-block w-100 maxHeight600 " src="<?php echo base_url('img/slider-img/slider3.jpg') ?>" alt="Third slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
@@ -127,7 +127,7 @@
 
               <!--Card image-->
               <div class="view view-cascade">
-                <img src="<?php echo base_url('img/profile/pelaminan.jpg') ?>" class="card-img-top">
+                <img src="<?php echo base_url('img/profile/pelaminan1.jpg') ?>" class="card-img-top">
                 <a href="#!">
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -160,7 +160,7 @@
 
               <!--Card image-->
               <div class="view view-cascade">
-                <img src="<?php echo base_url('img/profile/tenda.jpg') ?>" class="card-img-top">
+                <img src="<?php echo base_url('img/profile/tenda1.jpg') ?>" class="card-img-top">
                 <a href="#!">
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -192,7 +192,7 @@
 
               <!--Card image-->
               <div class="view view-cascade">
-                <img src="<?php echo base_url('img/profile/rias_pengantin.jpg') ?>" class="card-img-top">
+                <img src="<?php echo base_url('img/profile/tatarias.jpg') ?>" class="card-img-top">
                 <a href="#!">
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -239,7 +239,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-12 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/1.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -248,7 +248,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-6 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/2.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/12.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -257,7 +257,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-6 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/3.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -271,7 +271,7 @@
           <!-- Grid column -->
           <div class="col-lg-3 col-md-42 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/4.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/12.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -280,7 +280,7 @@
           <!-- Grid column -->
           <div class="col-lg-3 col-md-4 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/5.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -289,13 +289,13 @@
           <!-- Grid column -->
           <div class="col-lg-3 col-md-4 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/6.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
           <div class="col-lg-3 col-md-4 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/7.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -309,7 +309,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-12 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/8.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -318,7 +318,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-6 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/9.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -327,7 +327,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-6 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/10.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -352,25 +352,25 @@
 
             <!--First column-->
             <div class="col-md-3 flex-center ">
-              <img src="<?php echo base_url('img/portofolio/10.jpg') ?>" class="img-fluid ">
+              <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid ">
             </div>
             <!--/First column-->
 
             <!--Second column-->
             <div class="col-md-3 flex-center ">
-              <img src="<?php echo base_url('img/portofolio/10.jpg') ?>" class="img-fluid ">
+              <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid ">
             </div>
             <!--/Second column-->
 
             <!--Third column-->
             <div class="col-md-3 flex-center ">
-              <img src="<?php echo base_url('img/portofolio/10.jpg') ?>" class="img-fluid ">
+              <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid ">
             </div>
             <!--/Third column-->
 
             <!--Fourth column-->
             <div class="col-md-3 flex-center ">
-              <img src="<?php echo base_url('img/portofolio/10.jpg') ?>" class="img-fluid ">
+              <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid ">
             </div>
             <!--/Fourth column-->
 
@@ -419,7 +419,7 @@
             </li>
 
             <li><i class="fas fa-envelope fa-2x "></i>
-              <p class="grey-text ">amai.cahya@gmail.com</p>
+              <p class="grey-text ">amailiacahya@gmail.com</p>
             </li>
           </ul>
         </div>
