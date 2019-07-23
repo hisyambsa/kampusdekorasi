@@ -1,5 +1,13 @@
 <?php 
-
+/*
+<!-- .................................. -->
+<!-- ...........COPYRIGHT ............. -->
+<!-- Authors : Hisyam Husein .......... -->
+<!-- Email : hisyam.husein@gmail.com .. -->
+<!-- About : hisyam.ismul.com ......... -->
+<!-- Instagram : @hisyambsa............ -->
+<!-- .................................. -->
+*/
 ?>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');

@@ -29,28 +29,20 @@ body, html {
 }
 
 .sn-bg-1 {
-    background-image: url("../../img/background.jpg");
+    background-image: url("../../img/background_sidebar.jpg");
 }
 .sn-bg-2 {
-    background-image: url("../../img/background.jpg");
+    background-image: url("../../img/background_sidebar.jpg");
 }
 .sn-bg-3 {
-    background-image: url("../../img/background.jpg");
+    background-image: url("../../img/background_sidebar.jpg");
 }
 .sn-bg-4 {
-    background-image: url("../../img/background.jpg");
+    background-image: url("../../img/background_sidebar.jpg");
 }
 .sn-bg-5 {
-    background-image: url("../../img/background.jpg");
+    background-image: url("../../img/background_sidebar.jpg");
 }
 .sn-bg-6 {
-    background-image: url("../../img/background.jpg");
-}
-
-.bg-dark {
-    background-color: #2f2eb3ab!important;
-}
-
-.navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
-    /*color: #272402;*/
+    background-image: url("../../img/background_sidebar.jpg");
 }
