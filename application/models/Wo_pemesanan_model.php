@@ -77,15 +77,15 @@ class Wo_pemesanan_model extends CI_Model
     // get total rows and where
     function total_rows_pemesanan($q = NULL, $user) {
         $this->db->like('id_pemesanan', $q);
-        $this->db->or_like('nama_user', $q);
-        $this->db->or_like('nama_package', $q);
-        $this->db->or_like('id_detail_include_pemesanan', $q);
-        $this->db->or_like('tanggal_pemesanan', $q);
-        $this->db->or_like('tanggal_booking', $q);
-        $this->db->or_like('total_uang_masuk', $q);
-        $this->db->or_like('total_uang_bayar', $q);
-        $this->db->or_like('foto_bukti', $q);
-        $this->db->or_like('status', $q);
+        // $this->db->or_like('nama_user', $q);
+        // $this->db->or_like('nama_package', $q);
+        // $this->db->or_like('id_detail_include_pemesanan', $q);
+        // $this->db->or_like('tanggal_pemesanan', $q);
+        // $this->db->or_like('tanggal_booking', $q);
+        // $this->db->or_like('total_uang_masuk', $q);
+        // $this->db->or_like('total_uang_bayar', $q);
+        // $this->db->or_like('foto_bukti', $q);
+        // $this->db->or_like('status', $q);
 
         $this->db->where('user.id_user', $user);
 
@@ -100,16 +100,16 @@ class Wo_pemesanan_model extends CI_Model
     // get data with limit and search and whire
     function get_limit_data_pemesanan($limit, $start = 0, $q = NULL, $user) {
         $this->db->order_by($this->id, $this->order);
-        $this->db->like('id_pemesanan', $q);
-        $this->db->or_like('nama_user', $q);
-        $this->db->or_like('nama_package', $q);
-        $this->db->or_like('id_detail_include_pemesanan', $q);
-        $this->db->or_like('tanggal_pemesanan', $q);
-        $this->db->or_like('tanggal_booking', $q);
-        $this->db->or_like('total_uang_masuk', $q);
-        $this->db->or_like('total_uang_bayar', $q);
-        $this->db->or_like('foto_bukti', $q);
-        $this->db->or_like('status', $q);
+        // $this->db->like('id_pemesanan', $q);
+        // $this->db->or_like('nama_user', $q);
+        // $this->db->or_like('nama_package', $q);
+        // $this->db->or_like('id_detail_include_pemesanan', $q);
+        // $this->db->or_like('tanggal_pemesanan', $q);
+        // $this->db->or_like('tanggal_booking', $q);
+        // $this->db->or_like('total_uang_masuk', $q);
+        // $this->db->or_like('total_uang_bayar', $q);
+        // $this->db->or_like('foto_bukti', $q);
+        // $this->db->or_like('status', $q);
 
         $this->db->where('user.id_user', $user);
 
