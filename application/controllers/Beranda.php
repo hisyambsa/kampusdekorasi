@@ -66,7 +66,7 @@ class Beranda extends CI_Controller {
 
 // PEMESANANAN
 			'button' => 'Buat',
-			'action' => site_url('wo_pemesanan/create_action_user'),
+			'action' => site_url('wo_pemesanan/create_action'),
 			'id_pemesanan' => set_value('id_pemesanan'),
 			'tanggal_pemesanan' => set_value('tanggal_pemesanan'),
 			'tanggal_booking' => set_value('tanggal_booking'),
@@ -105,7 +105,6 @@ class Beranda extends CI_Controller {
 
 		$this->load->view('user/package', $data);
 		$this->load->view('inc/footer-js-admin');
-		$this->load->view('inc/function-js-admin');
 		$this->load->view('_adds-on/upload');
 	}
 
