@@ -4,7 +4,7 @@
     <div class="border border-secondary p-3">
       <div class="row">
         <div class="col-md-8 text-center align-middle">
-          <p class="h2 text-center ">Daftar Pemesanan</p>
+          <p class="h4 text-center ">Daftar Pemesanan <br><?php echo $this->session->userdata('nama'); ?></p>
         </div>
         <div class="col-md-4 text-right">
           <form action="<?php echo site_url('beranda/pemesanan'); ?>" class="form-group" method="get" autocomplete="off">
@@ -31,13 +31,13 @@
             <th class="th-sm">No</th>
             <th class="th-sm">Status</th>
 
-            <th class="th-sm">Nama User</th>
+            <!-- <th class="th-sm">Nama User</th> -->
             <th class="th-sm">Nama Package</th>
             <!-- <th class="th-sm">Id Detail Include Pemesanan</th> -->
             <th class="th-sm">Tanggal Pemesanan</th>
             <th class="th-sm">Tanggal Booking</th>
             <th class="th-sm">Total Uang Masuk</th>
-            <th class="th-sm">Total Uang Bayar</th>
+            <th class="th-sm">Total Bayar</th>
             <th class="th-sm">Foto Bukti</th>
             </tr><?php
             foreach ($wo_pemesanan_data as $wo_pemesanan)
@@ -48,17 +48,17 @@
                <td>
 
                 <?php if ($wo_pemesanan->status==1) {
-                  echo "belum bayar";
+                  echo "Menunggu Konfirmasi";
                 }else if ($wo_pemesanan->status==2) {
-                  echo "sudah bayar dp";
+                  echo '<button class="btn btn-warning btn-sm">Menunggu Pelunasan</button>';
                 }else if ($wo_pemesanan->status==3) {
-                  echo "sudah konfirmasi dp";
+                  echo "menunggu konfirmasi Pelunasan";
                 }elseif ($wo_pemesanan->status==4) {
-                  echo "sudah bayar";
+                  echo "sudah Lunas";
                 }else {echo "status tidak terdefinisi";}?>
 
               </td>
-              <td><?php echo $wo_pemesanan->nama_user ?></td>
+              <!-- <td><?php echo $wo_pemesanan->nama_user ?></td> -->
               <td><?php echo $wo_pemesanan->nama_package ?></td>
               <!-- <td><?php echo $wo_pemesanan->id_detail_include_pemesanan ?></td> -->
               <td><?php echo $wo_pemesanan->tanggal_pemesanan ?></td>

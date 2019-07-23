@@ -133,10 +133,6 @@ $('.datepickerBooking').pickadate({
 
 </script>
 
-
-
-
-
 </div> 
 </main>
 </body>
