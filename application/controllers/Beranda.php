@@ -378,6 +378,7 @@ class Beranda extends CI_Controller {
 
 		$this->load->view('user/pemesanan', $data);
 		$this->load->view('inc/footer-js-admin');
+		$this->load->view('inc/function-js-admin');
 
 		
 	}
