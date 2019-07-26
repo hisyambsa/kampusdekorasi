@@ -35,6 +35,11 @@
 
 
 <script>
+$('.booking_false').click(function() {
+  
+$('#login_register').popover('toggle');
+});
+
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()

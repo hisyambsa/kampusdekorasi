@@ -122,6 +122,7 @@ class Beranda extends CI_Controller {
 
 
 		$this->load->model('Wo_package_model');
+		$this->load->model('Wo_include_model');
 
 		$q = urldecode($this->input->get('q', TRUE));
 		$start = intval($this->input->get('start'));
@@ -147,6 +148,16 @@ class Beranda extends CI_Controller {
 		$wo_user = $this->Wo_user_model->get_limit_data(999);
 		// $wo_package = $this->Wo_package_model->get_limit_data(999);
 
+
+
+		$wo_include = $this->Wo_include_model->get_limit_data(999);
+
+
+		// $this->load->view('wo_include/wo_include_list', $data1);
+
+
+
+
 		$data = array(
 			'judulPackage' => 'Daftar Package Gedung / Aula',
 			'wo_package_data' => $wo_package,
@@ -167,6 +178,7 @@ class Beranda extends CI_Controller {
 
 			'wo_user_data' => $wo_user,
 			'wo_package_data' => $wo_package,
+			'wo_include_data' => $wo_include,
 
 		);
 		$this->load->model('Wo_user_model');
@@ -195,7 +207,22 @@ class Beranda extends CI_Controller {
   // );
 
 		$this->load->view('user/package', $data);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		$this->load->view('inc/footer-js-admin');
+		$this->load->view('inc/function-js-admin');
 		$this->load->view('_adds-on/upload');
 	}
 
@@ -379,7 +406,7 @@ class Beranda extends CI_Controller {
 		$this->load->view('user/pemesanan', $data);
 		$this->load->view('inc/footer-js-admin');
 		$this->load->view('inc/function-js-admin');
-
+$this->load->view('_adds-on/upload');
 		
 	}
 

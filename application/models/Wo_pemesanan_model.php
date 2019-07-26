@@ -115,7 +115,11 @@ class Wo_pemesanan_model extends CI_Model
 
         $this->db->join('user', 'user.id_user = pemesanan.id_user_pemesanan');
         $this->db->join('package', 'package.id_package = pemesanan.id_package_pemesanan');
+        $this->db->join('detail_include', 'detail_include.id_detail_include_pemesanan = pemesanan.id_pemesanan', 'left');
+        $this->db->group_by('id_package_pemesanan');
         $this->db->limit($limit, $start);
+        $this->db->select('*');
+        $this->db->select_sum('wo_detail_include.harga_total','total_detail_include');
         return $this->db->get($this->table)->result();
     }
 

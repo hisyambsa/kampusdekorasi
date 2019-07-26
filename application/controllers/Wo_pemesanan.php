@@ -259,10 +259,32 @@ class Wo_pemesanan extends CI_Controller
       );  
       $this->session->set_flashdata('pesan', 'Berhasil Update Konfirmasi Booking');
     }else if ($status==2) {
+
+
+
+    $this->load->model('Wo_pemesanan_model');
+
+    
+    $data_pemesanan = $this->Wo_pemesanan_model->get_by_id(1);
+
+var_dump($data_pemesanan->foto_bukti);
+
+    $this->load->model('Upload_model');
+    $foto_bukti = 'foto_bukti';
+    $foto_bukti = $this->Upload_model->ambiltempatupload($foto_bukti,'bukti',$data_pemesanan->foto_bukti);
+
+
+    if (is_array($foto_bukti)) {
+      $this->session->set_flashdata('pesan', 'Gagal Upload File');
+    }else{
       $data = array(
+        'foto_bukti' => $foto_bukti,
         'status' => 3,
       );
-      $this->session->set_flashdata('pesan', 'Berhasil Update Status Pemesanan');
+    }
+
+var_dump($data);
+
     }else if ($status==3) {
       $data = array(
         'status' => 4,
@@ -274,9 +296,9 @@ class Wo_pemesanan extends CI_Controller
 
     $this->Wo_pemesanan_model->update($this->input->post('id_pemesanan', TRUE), $data);
 
-    redirect(site_url('beranda/pemesanan'));
+    // redirect(site_url('beranda/pemesanan'));
 
-        // redirect(site_url('wo_pemesanan'));
+
   }
 
   public function delete($id) 

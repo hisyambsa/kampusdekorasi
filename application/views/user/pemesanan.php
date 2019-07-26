@@ -34,11 +34,13 @@
             <!-- <th class="th-sm">Nama User</th> -->
             <th class="th-sm">Nama Package</th>
             <!-- <th class="th-sm">Id Detail Include Pemesanan</th> -->
-            <th class="th-sm">Tanggal Pemesanan</th>
-            <th class="th-sm">Tanggal Booking</th>
-            <th class="th-sm">Total Uang Masuk</th>
+            <th class="th-sm">Pemesanan</th>
+            <th class="th-sm">Booking</th>
+            <th class="th-sm">Uang Masuk</th>
+            <th class="th-sm">Package</th>
+            <th class="th-sm">Include</th>
             <th class="th-sm">Total Bayar</th>
-            <th class="th-sm">Foto Bukti</th>
+            <th class="th-sm">Bukti</th>
             </tr><?php
             foreach ($wo_pemesanan_data as $wo_pemesanan)
             {
@@ -65,6 +67,8 @@
               <td><?php echo $wo_pemesanan->tanggal_booking ?></td>
               <td><?php echo $wo_pemesanan->total_uang_masuk ?></td>
               <td><?php echo $wo_pemesanan->total_uang_bayar ?></td>
+              <td><?php echo $wo_pemesanan->total_detail_include ?></td>
+              <td><?php echo $wo_pemesanan->total_detail_include + $wo_pemesanan->total_uang_bayar ?></td>
               <td><a href="<?php echo base_url('uploads/bukti/'.$wo_pemesanan->foto_bukti) ?>" target="_blank"><img class="zoom" height="30" width="30" src="<?php echo base_url('uploads/bukti/'.$wo_pemesanan->foto_bukti) ?>" alt="<?php echo $wo_pemesanan->foto_bukti ?>"></a></td>
             </tr>
             <?php
@@ -156,10 +160,23 @@ aria-hidden="true">
             <label for="varchar">Foto Bukti <?php echo form_error('foto_bukti') ?></label>
             <input type="text" class="form-control" name="foto_bukti" id="Masukan foto_bukti" placeholder="Foto Bukti" value="<?php echo $foto_bukti; ?>" />
         </div> -->
-        <div class="form-group text-center">
-            <label for="varchar">Foto Bukti Transfer</label> <?php echo form_error('foto_bukti') ?>
-            <img style="max-width: 400px;max-height: 250px;" id="imgBukti" class="" src="<?php echo base_url('uploads/bukti/').'10_2019-07-17.jpeg'; ?>" alt="foto Bukti">
+        <div class="form-group">
+            <p class="text-center" for="varchar">Foto Bukti Transfer DP</p class="text-center"> <?php echo form_error('foto_bukti') ?>
+            <div class="text-center"><img style="max-width: 400px;max-height: 150px;" id="imgBukti" class="img-thumbnail" src="<?php echo base_url('uploads/bukti/').'10_2019-07-17.jpeg'; ?>" alt="foto Bukti"></div>
         </div>
+        <div class="form-group">
+            <label for="varchar">Foto Bukti Pelunasan ( max: 2MB dan jpg/jpeg/png ) </label> <?php echo form_error('foto_bukti') ?>
+            <div class="text-danger" for="varchar"><?php  if (isset($foto)) {
+              echo $foto;
+            } ?></div>
+            <div id="image-preview">
+              <div class="fileupload-wrapper">
+
+                    <input data-max-file-size="2M" type="file" name="foto_bukti" id="input-file-now" class="file-upload" data-default-file="<?php echo base_url('img/upload_foto.jpg'); ?>" />
+
+                </div>
+              </div>
+            </div>
         <div class="form-group d-none">
           <label for="int">Status  <?php echo form_error('status') ?></label>
           <!-- <input type="text" class="form-control" name="status" id="Masukan status" placeholder="Status" value="<?php echo $status; ?>" /> -->
