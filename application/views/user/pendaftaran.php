@@ -28,6 +28,10 @@
                 <label for="varchar">Hp <?php echo form_error('hp') ?></label>
                 <input type="text" class="form-control" name="hp" id="Masukan hp" placeholder="Hp" value="<?php echo $hp; ?>" />
             </div>
+             <div class="form-group">
+                <label for="varchar">Email <?php echo form_error('email') ?></label>
+                <input type="text" class="form-control" name="email" id="Masukan email" placeholder="Email" value="<?php echo $email; ?>" />
+            </div>
         </div>
         <div class="col-md">
           <div class="form-group">

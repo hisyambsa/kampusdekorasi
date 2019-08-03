@@ -1,10 +1,3 @@
-<!-- .................................. -->
-<!-- ...........COPYRIGHT ............. -->
-<!-- Authors : Hisyam Husein .......... -->
-<!-- Email : hisyam.husein@gmail.com .. -->
-<!-- About : hisyam.ismul.com ......... -->
-<!-- Instagram : @hisyambsa............ -->
-<!-- .................................. -->
 <!DOCTYPE html>
 <html lang="en">
 

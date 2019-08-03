@@ -27,10 +27,10 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/include_package') ?>" data-offset="100">Include</a>
+            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/include_package') ?>" data-offset="100">Add On Package</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/syarat_ketentuan') ?>" data-offset="100">Syarat dan Ketentuan</a>
+            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/syarat_ketentuan') ?>" data-offset="100">Prosedur Pemesanan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/pemesanan') ?>" data-offset="100">Pemesanan</a>
@@ -39,13 +39,13 @@
         <!-- Social Icon  -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a href="https://www.instagram.com/hisyambsa" class="nav-link"><i class="fab fa-facebook-f light-green-text-2"></i></a>
+            <a href="https://www.instagram.com/amailiacahya" class="nav-link"><i class="fab fa-facebook-f light-green-text-2"></i></a>
           </li>
           <li class="nav-item">
-            <a href="https://www.instagram.com/hisyambsa" class="nav-link"><i class="fab fa-twitter light-green-text-2"></i></a>
+            <a href="https://www.instagram.com/amailiacahya" class="nav-link"><i class="fab fa-twitter light-green-text-2"></i></a>
           </li>
           <li class="nav-item">
-            <a href="https://www.instagram.com/hisyambsa" class="nav-link"><i class="fab fa-instagram light-green-text-2"></i></a>
+            <a href="https://www.instagram.com/amailiacahya" class="nav-link"><i class="fab fa-instagram light-green-text-2"></i></a>
           </li>
           <?php if (is_null($this->session->userdata('id_user'))): ?>
             <li class="nav-item">

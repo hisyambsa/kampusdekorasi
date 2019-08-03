@@ -16,7 +16,6 @@ class Beranda extends CI_Controller {
 		$this->load->view('user/nav');
 		$this->load->view('user/beranda');
 		$this->load->view('inc/footer-js-admin');
-
 	}
 	
 	public function packageGedung_Aula()
@@ -122,6 +121,7 @@ class Beranda extends CI_Controller {
 
 
 		$this->load->model('Wo_package_model');
+		$this->load->model('Wo_include_model');
 
 		$q = urldecode($this->input->get('q', TRUE));
 		$start = intval($this->input->get('start'));
@@ -147,6 +147,16 @@ class Beranda extends CI_Controller {
 		$wo_user = $this->Wo_user_model->get_limit_data(999);
 		// $wo_package = $this->Wo_package_model->get_limit_data(999);
 
+
+
+		$wo_include = $this->Wo_include_model->get_limit_data(999);
+
+
+		// $this->load->view('wo_include/wo_include_list', $data1);
+
+
+
+
 		$data = array(
 			'judulPackage' => 'Daftar Package Gedung / Aula',
 			'wo_package_data' => $wo_package,
@@ -167,6 +177,7 @@ class Beranda extends CI_Controller {
 
 			'wo_user_data' => $wo_user,
 			'wo_package_data' => $wo_package,
+			'wo_include_data' => $wo_include,
 
 		);
 		$this->load->model('Wo_user_model');
@@ -196,6 +207,7 @@ class Beranda extends CI_Controller {
 
 		$this->load->view('user/package', $data);
 		$this->load->view('inc/footer-js-admin');
+		$this->load->view('inc/function-js-admin');
 		$this->load->view('_adds-on/upload');
 	}
 
@@ -244,13 +256,13 @@ class Beranda extends CI_Controller {
 	public function syarat_ketentuan()
 	{
 		$data = array(
-			'judul' => 'Wo Dekorasi', 
+			'judul' => 'Kampus Dekorasi', 
 		);
 		$this->load->view('inc/link-head-admin',$data);
 		$this->load->view('user/nav');
 
 		$data = array(
-			'judulPackage' => 'Syarat dan Ketentuan',
+			'judulPackage' => 'Prosedur Pemesanan',
 		);
 
 		$this->load->view('user/syarat_ketentuan',$data);
@@ -278,6 +290,7 @@ class Beranda extends CI_Controller {
 			'hp' => set_value('hp'),
 			'foto_identitas' => set_value('foto_identitas'),
 			'foto' => $foto,
+			'email' => set_value ('email')
 		);
 
 		$this->load->view('user/pendaftaran',$data);
@@ -297,10 +310,17 @@ class Beranda extends CI_Controller {
 		$this->form_validation->set_rules('tanggal_lahir', 'tanggal lahir', 'trim|required');
 		$this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 		$this->form_validation->set_rules('hp', 'hp', 'trim|required|numeric');
+		$this->form_validation->set_rules('email', 'email', 'trim|required');
 		$this->form_validation->set_rules('foto_identitas', 'foto_identitas', 'trim');
 
 		$this->form_validation->set_rules('id_user', 'id_user', 'trim');
 		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+
+		$angka = range(0,9);
+		$shuffle = shuffle($angka);
+		$ambilangka = array_rand($angka,6); 
+		$angkastring = implode($ambilangka);
+		$code = $angkastring;
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->pendaftaran('- Upload kembali');
@@ -319,6 +339,8 @@ class Beranda extends CI_Controller {
 					'alamat' => $this->input->post('alamat',TRUE),
 					'hp' => $this->input->post('hp',TRUE),
 					'foto_identitas' => $foto_identitas,
+					'email' => $this-> input -> post ('email',TRUE),
+					'random_code' => $code
 				);
 				$this->Wo_user_model->insert($data);
 				$this->session->set_flashdata('pesan', 'Berhasil melakukan Pendaftaran silahkan login');
@@ -378,7 +400,8 @@ class Beranda extends CI_Controller {
 
 		$this->load->view('user/pemesanan', $data);
 		$this->load->view('inc/footer-js-admin');
-
+		$this->load->view('inc/function-js-admin');
+$this->load->view('_adds-on/upload');
 		
 	}
 

@@ -46,6 +46,8 @@ class Wo_pemesanan extends CI_Controller
 
     $this->load->view('wo_pemesanan/wo_pemesanan_list', $data);
     $this->load->view('inc/footer-js-admin');
+    $this->load->view('inc/function-js-admin');
+    $this->load->view('_adds-on/upload');
   }
 
   public function read($id) 
@@ -71,6 +73,7 @@ class Wo_pemesanan extends CI_Controller
       );
       $this->load->view('wo_pemesanan/wo_pemesanan_read', $data);
       $this->load->view('inc/footer-js-admin');
+
     } else {
       show_error('Data tidak ditemukan atau hilang, hubungi administrator <br> <a href="javascript: history.go(-1)"> kembali ke ke halaman sebelumnya </a>');
     }
@@ -218,6 +221,84 @@ class Wo_pemesanan extends CI_Controller
         redirect(site_url('wo_pemesanan'));
       }
     }
+  }
+
+  public function update_status($status)
+  {
+    if ($status ==1) {
+      $data = array(
+        'status' => 2,
+      );  
+      $this->session->set_flashdata('pesan', 'Berhasil Update Konfirmasi Booking');
+    }else if ($status==2) {
+      $data = array(
+        'status' => 3,
+      );
+      $this->session->set_flashdata('pesan', 'Berhasil Update Status Pemesanan');
+    }else if ($status==3) {
+      $data = array(
+        'status' => 4,
+      );
+      $this->session->set_flashdata('pesan', 'Berhasil Update Status Pelunasan');
+    }else{
+      $this->session->set_flashdata('pesan', 'gagal update status');
+    }
+
+    $this->Wo_pemesanan_model->update($this->input->post('id_pemesanan', TRUE), $data);
+
+    redirect(site_url('wo_pemesanan'));
+
+        // redirect(site_url('wo_pemesanan'));
+  }
+
+  public function update_status_user($status)
+  {
+    if ($status ==1) {
+      $data = array(
+        'status' => 2,
+      );  
+      $this->session->set_flashdata('pesan', 'Berhasil Update Konfirmasi Booking');
+    }else if ($status==2) {
+
+
+
+    $this->load->model('Wo_pemesanan_model');
+
+    
+    $data_pemesanan = $this->Wo_pemesanan_model->get_by_id(1);
+
+var_dump($data_pemesanan->foto_bukti);
+
+    $this->load->model('Upload_model');
+    $foto_bukti = 'foto_bukti';
+    $foto_bukti = $this->Upload_model->ambiltempatupload($foto_bukti,'bukti',$data_pemesanan->foto_bukti);
+
+
+    if (is_array($foto_bukti)) {
+      $this->session->set_flashdata('pesan', 'Gagal Upload File');
+    }else{
+      $data = array(
+        'foto_bukti' => $foto_bukti,
+        'status' => 3,
+      );
+    }
+
+var_dump($data);
+
+    }else if ($status==3) {
+      $data = array(
+        'status' => 4,
+      );
+      $this->session->set_flashdata('pesan', 'Berhasil Update Status Pelunasan');
+    }else{
+      $this->session->set_flashdata('pesan', 'gagal update status');
+    }
+
+    $this->Wo_pemesanan_model->update($this->input->post('id_pemesanan', TRUE), $data);
+
+    // redirect(site_url('beranda/pemesanan'));
+
+
   }
 
   public function delete($id) 

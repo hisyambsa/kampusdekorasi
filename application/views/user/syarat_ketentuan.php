@@ -22,9 +22,26 @@
 			<h6 class="font-weight-bold indigo-text py-2 text-center">Booking WO - Dekorasi</h6>
 			<div class="container">
 				<!-- Text -->
+
 			<p class="card-text">
 				<li>
-					Dp 25% dari total nominal order untuk booking tanggal
+					Calon pemesan wajib melakukan pendaftaran untuk login
+				</li>
+				<li>
+					calon pemesan dapat melihat Beranda Kampus Dekorasi yang terdapat contoh hasil dekorasi yang telah diselesaikan.<br>
+				</li>
+				<br>
+				Prosedur Pemesanan <br>
+				1. Calon Pemesan Masuk ke form Package <br>
+				2. Calon pemesan memilih package yang tersedia lalu klik booking <br>
+				3. Calon Pemesan harus mengisi form booking <br>
+				4. Calon Pemesan mengupload bukti transfer dp min 20% dari total pemesanan <br>
+				5. Calon pemesan menunggu konfirmasi dari pihak Kampus Dekorasi <br>
+				6. Setelah pihak Kampus Dekorasi mengkonfirmasi pesanan, pemesan dapat melakukan sisa pembayaran<br>
+				<br>
+				
+				<li>
+					Dp minimal 20% dari total nominal order untuk booking tanggal
 				</li>
 				<li>Pelunasan Maksimal H-1 jika terlambat1 hari akan dikenakan denda sebesar 10% dari harga dealing.
 				</li>
@@ -38,9 +55,9 @@
 				<li>
 					Pembatal order DP No Refund
 				</li>
-				<li>
-					Untuk luar Bojonggede dikenakan biaya transport 1jt
-				</li>
+				
+				<br>
+				Selama Transaksi Calon pemesan ataupun Pemesan dapat melakukan konfirmasi secara langsung via WA yang terdapat di web, Admin akan menjawab dengan senang hari.
 
 			</p>
 			</div>
@@ -59,7 +76,7 @@
       <!--First column-->
       <div class="col-md-12 my-4">
         <div class="container-fluid text-right">
-          © 2019 Copyright: <a href="https://instagram.com/amailiacahya" target="_blank"> Skripsi Amailia Cahya Rudiana </a>
+          © 2019 Copyright: <a href="https://instagram.com/iwankampusdekorasi" target="_blank"> Skripsi Amailia Cahya Rudiana </a>
         </div>
       </div>
       <!--/First column-->

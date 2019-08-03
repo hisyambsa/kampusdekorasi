@@ -12,7 +12,7 @@
 			<!-- Material form login -->
 			<div class="card">
 				<h5 class="card-header pink accent-1 black-text text-center py-4">
-					<strong>Login WO Dekorasi</strong>
+					<strong>Login Kampus Dekorasi</strong>
 				</h5>
 
 				<br>
