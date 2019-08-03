@@ -52,7 +52,7 @@
               <a type="button" class="nav-link" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" title="Login" data-content="
               <div class='form-group'>
                 <form class='text-center' action='<?php echo base_url()?>login/auth' method='post' style='color: #757575;'>
-                  <input type='password' name='username' placeholder='Nomor Hp' class='form-control' maxlength='20'>
+                  <input type='email' name='username' placeholder='Masukan Email' class='form-control' maxlength='50'>
                   <br> 
                   <input type='password' name='password' placeholder='Tangggal Lahir' class='form-control' maxlength='10'>
                   <br>

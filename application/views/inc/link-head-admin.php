@@ -23,9 +23,14 @@
 
 <link rel="stylesheet" href="<?php echo base_url('assets/pickadate/lib/themes/classic.date.css') ?>">
 
+<link rel="stylesheet" href="<?php echo base_url('assets/node_modules/lightbox2/dist/css/lightbox.css') ?>">
+
 
 
   <script src="<?php echo base_url('assets/node_modules/sweetalert2/dist/sweetalert2.all.js') ?>"></script>
+
+
+
 
 
   <div id="mdb-preloader" class="flex-center">

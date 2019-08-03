@@ -43,7 +43,7 @@ class Beranda extends CI_Controller {
 
 		$config['per_page'] = 12;
 		$config['page_query_string'] = TRUE;
-		$config['total_rows'] = $this->Wo_package_model->total_rows($q);
+		$config['total_rows'] = $this->Wo_package_model->total_rows_gedung($q);
 		$wo_package = $this->Wo_package_model->get_limit_data_gedung($config['per_page'], $start, $q);
 
 		$this->load->library('pagination');
@@ -80,27 +80,8 @@ class Beranda extends CI_Controller {
 		$this->load->model('Wo_user_model');
 		$this->load->model('Wo_package_model');
 
-		// $wo_user = $this->Wo_user_model->get_limit_data(999);
-		// $wo_package = $this->Wo_package_model->get_limit_data(999);
 
 
-  //   $data = array(
-  //     'button' => 'Buat',
-  //     'action' => site_url('wo_pemesanan/create_action'),
-  //     'id_pemesanan' => set_value('id_pemesanan'),
-  //     'id_user_pemesanan' => set_value('id_user_pemesanan'),
-  //     'id_package_pemesanan' => set_value('id_package_pemesanan'),
-  //     'id_detail_include_pemesanan' => set_value('id_detail_include_pemesanan'),
-  //     'tanggal_pemesanan' => set_value('tanggal_pemesanan'),
-  //     'tanggal_booking' => set_value('tanggal_booking'),
-  //     'total_uang_masuk' => set_value('total_uang_masuk'),
-  //     'total_uang_bayar' => set_value('total_uang_bayar'),
-  //     'foto_bukti' => set_value('foto_bukti'),
-  //     'status' => set_value('status'),
-  //     'foto' => $foto,
-  //     'wo_user_data' => $wo_user,
-  //     'wo_package_data' => $wo_package,
-  // );
 
 		$this->load->view('user/package', $data);
 		$this->load->view('inc/footer-js-admin');
@@ -136,7 +117,7 @@ class Beranda extends CI_Controller {
 
 		$config['per_page'] = 12;
 		$config['page_query_string'] = TRUE;
-		$config['total_rows'] = $this->Wo_package_model->total_rows($q);
+		$config['total_rows'] = $this->Wo_package_model->total_rows_rumahan($q);
 		$wo_package = $this->Wo_package_model->get_limit_data_rumahan($config['per_page'], $start, $q);
 
 		$this->load->library('pagination');
@@ -153,17 +134,18 @@ class Beranda extends CI_Controller {
 
 
 		// $this->load->view('wo_include/wo_include_list', $data1);
-
-
+		$this->load->model('Wo_pemesanan_model');
+		$jumlahPemesananHariIni = $this->Wo_pemesanan_model->total_pemesanan_hari_ini();
 
 
 		$data = array(
-			'judulPackage' => 'Daftar Package Gedung / Aula',
+			'judulPackage' => 'Daftar Package Rumahan',
 			'wo_package_data' => $wo_package,
 			'q' => $q,
 			'pagination' => $this->pagination->create_links(),
 			'total_rows' => $config['total_rows'],
 			'start' => $start,
+			'jumlahPemesananHariIni'=>$jumlahPemesananHariIni,
 
 // PEMESANANAN
 			'button' => 'Buat',
@@ -183,27 +165,6 @@ class Beranda extends CI_Controller {
 		$this->load->model('Wo_user_model');
 		$this->load->model('Wo_package_model');
 
-		// $wo_user = $this->Wo_user_model->get_limit_data(999);
-    // $wo_package = $this->Wo_package_model->get_limit_data(999);
-
-
-  //   $data = array(
-  //     'button' => 'Buat',
-  //     'action' => site_url('wo_pemesanan/create_action'),
-  //     'id_pemesanan' => set_value('id_pemesanan'),
-  //     'id_user_pemesanan' => set_value('id_user_pemesanan'),
-  //     'id_package_pemesanan' => set_value('id_package_pemesanan'),
-  //     'id_detail_include_pemesanan' => set_value('id_detail_include_pemesanan'),
-  //     'tanggal_pemesanan' => set_value('tanggal_pemesanan'),
-  //     'tanggal_booking' => set_value('tanggal_booking'),
-  //     'total_uang_masuk' => set_value('total_uang_masuk'),
-  //     'total_uang_bayar' => set_value('total_uang_bayar'),
-  //     'foto_bukti' => set_value('foto_bukti'),
-  //     'status' => set_value('status'),
-  //     'foto' => $foto,
-  //     'wo_user_data' => $wo_user,
-  //     'wo_package_data' => $wo_package,
-  // );
 
 		$this->load->view('user/package', $data);
 		$this->load->view('inc/footer-js-admin');
@@ -226,14 +187,14 @@ class Beranda extends CI_Controller {
 		$start = intval($this->input->get('start'));
 
 		if ($q <> '') {
-			$config['base_url'] = base_url() . 'wo_package/index.html?q=' . urlencode($q);
-			$config['first_url'] = base_url() . 'wo_package/index.html?q=' . urlencode($q);
+			$config['base_url'] = base_url() . 'beranda/include_package.html?q=' . urlencode($q);
+			$config['first_url'] = base_url() . 'beranda/include_package.html?q=' . urlencode($q);
 		} else {
-			$config['base_url'] = base_url() . 'wo_package/index.html';
-			$config['first_url'] = base_url() . 'wo_package/index.html';
+			$config['base_url'] = base_url() . 'beranda/include_package.html';
+			$config['first_url'] = base_url() . 'beranda/include_package.html';
 		}
 
-		$config['per_page'] = 12;
+		$config['per_page'] = 5;
 		$config['page_query_string'] = TRUE;
 		$config['total_rows'] = $this->Wo_include_model->total_rows($q);
 		$wo_include = $this->Wo_include_model->get_limit_data($config['per_page'], $start, $q);
@@ -316,11 +277,11 @@ class Beranda extends CI_Controller {
 		$this->form_validation->set_rules('id_user', 'id_user', 'trim');
 		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
 
-		$angka = range(0,9);
-		$shuffle = shuffle($angka);
-		$ambilangka = array_rand($angka,6); 
-		$angkastring = implode($ambilangka);
-		$code = $angkastring;
+		// $angka = range(0,9);
+		// $shuffle = shuffle($angka);
+		// $ambilangka = array_rand($angka,6); 
+		// $angkastring = implode($ambilangka);
+		// $code = $angkastring;
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->pendaftaran('- Upload kembali');
@@ -340,7 +301,7 @@ class Beranda extends CI_Controller {
 					'hp' => $this->input->post('hp',TRUE),
 					'foto_identitas' => $foto_identitas,
 					'email' => $this-> input -> post ('email',TRUE),
-					'random_code' => $code
+					// 'random_code' => $code
 				);
 				$this->Wo_user_model->insert($data);
 				$this->session->set_flashdata('pesan', 'Berhasil melakukan Pendaftaran silahkan login');
@@ -401,7 +362,7 @@ class Beranda extends CI_Controller {
 		$this->load->view('user/pemesanan', $data);
 		$this->load->view('inc/footer-js-admin');
 		$this->load->view('inc/function-js-admin');
-$this->load->view('_adds-on/upload');
+		$this->load->view('_adds-on/upload');
 		
 	}
 

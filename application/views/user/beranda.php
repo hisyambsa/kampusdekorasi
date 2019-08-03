@@ -392,9 +392,7 @@
 
           <!--Grid column-->
           <div class="col-md-8 mb-5 text-center">
-           <iframe src="http://localhost/phpmyadmin/" frameborder="0">
-
-           </iframe>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15856.98998749632!2d106.79628792406372!3d-6.4903131326016705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c239427d543b%3A0x199c4357c5412312!2sKampus+Dekorasi!5e0!3m2!1sid!2sid!4v1564829700190!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
          </div>
          <!--Grid column-->
 

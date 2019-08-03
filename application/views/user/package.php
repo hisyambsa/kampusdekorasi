@@ -1,59 +1,86 @@
 <div class="container">
-	<h1 class="text-center mt-3 alert alert-danger"><?php echo $judulPackage ?></h1>
-	<div class="row">
 
-		<?php 
-		foreach ($wo_package_data as $wo_package)
-		{
-			++$start;
-			?>
-			<div class="col-md-4">
-				<!-- Card -->
-				<div class="card">
-					<!-- Card image -->
-					<img class="card-img-top" height="200" width="200" src="<?php echo base_url('uploads/package/'.$wo_package->foto_package) ?>" alt="<?php echo $wo_package->foto_package ?>">
+  <style>
+    .my-custom-scrollbar {
+      position: relative;
+      /*width: 800px;*/
+      height: 200px;
+      overflow: auto;
+    }
 
-					<!-- Card content -->
-					<div class="card-body">
+  </style>
+  <script>
+    var myCustomScrollbar = document.querySelector('.my-custom-scrollbar');
+    var ps = new PerfectScrollbar(myCustomScrollbar);
 
-						<!-- Title -->
-						<h4 class="card-title"><a><?php echo $wo_package->nama_package ?></a></h4>
-						<!-- Text -->
-						<p class="card-text"><?php echo $wo_package->detail_package ?></p>
-						<!-- Button -->
-						<p class="text-center"><?php echo 'Rp. '.number_format($wo_package->harga_package,0,',','.'); ?></p> 
-						<?php if ($this->session->userdata('logged')): ?>
-              <button href="" data-idPackage="<?php echo $wo_package->id_package ?>" class="btn btn-primary btn-sm btn-rounded float-right" data-toggle="modal" data-target="#modalBooking" data-harga="<?php echo $wo_package->harga_package ?>">Booking</button> 
-              <?php else: ?>
+    var scrollbarY = myCustomScrollbar.querySelector('.ps.ps--active-y>.ps__scrollbar-y-rail');
 
-                <button class="btn btn-sm btn-rounded btn-danger float-right booking_false">
-                  Login
-                </button>
-              <?php endif ?>
+    myCustomScrollbar.onscroll = function() {
+      scrollbarY.style.cssText = `top: ${this.scrollTop}px!important; height: 400px; right: ${-this.scrollLeft}px`;
+    }
+  </script>
 
-            </div>
-          </div>
-          <!-- Card -->
+
+  <h1 class="text-center mt-3 alert alert-danger"><?php echo $judulPackage ?></h1>
+  <div class="row">
+
+    <?php 
+    foreach ($wo_package_data as $wo_package)
+    {
+     ++$start;
+     ?>
+     <div class="col-md-4">
+      <!-- Card -->
+      <div class="card">
+       <!-- Card image -->
+
+
+       <a href="<?php echo base_url('uploads/package/'.$wo_package->foto_package) ?>" data-lightbox="<?php echo base_url('uploads/package/'.$wo_package->foto_package) ?>" data-title="<?php echo $wo_package->nama_package ?>"><img class="card-img-top" height="200" width="200" src="<?php echo base_url('uploads/package/'.$wo_package->foto_package) ?>" alt="<?php echo $wo_package->foto_package ?>"></a>
+
+       <!-- Card content -->
+       <div class="card-body">
+
+        <!-- Title -->
+        <h4 class="card-title"><a><?php echo $wo_package->nama_package ?></a></h4>
+        <!-- Text -->
+        <p class="card-text"><?php echo $wo_package->detail_package ?></p>
+        <!-- Button -->
+        <p class="text-center"><?php echo 'Rp. '.number_format($wo_package->harga_package,0,',','.'); ?></p> 
+        <?php if ($this->session->userdata('logged')): ?>
+          <?php if ($jumlahPemesananHariIni<2): ?>
+            <button href="" data-idPackage="<?php echo $wo_package->id_package ?>" class="btn btn-primary btn-sm btn-rounded float-right klikBooking" data-toggle="modal" data-target="#modalBooking" data-harga="<?php echo $wo_package->harga_package ?>">Booking</button> <?php else: ?>
+            <button class="btn btn-primary btn-sm btn-rounded float-right" onclick="redirectPesan('error','kuota anda hari ini sudah habis')">Booking</button>
+          <?php endif ?>
+          <?php else: ?>
+
+            <button class="btn btn-sm btn-rounded btn-danger float-right booking_false">
+              Login
+            </button>
+          <?php endif ?>
+
         </div>
-
-        <?php
-      }
-      if ($start==0) {
-       ?>
-       <script>
-        redirectPesan('error','Datang Kembali Nanti');
-      </script>
-
-    <?php } ?>
-  </div>
-  <div class="row mt-2">
-    <div class="col-md-4">
-      <a href="#" class="btn btn-elegant btn-sm disabled ">Jumlah Package : <?php echo $total_rows ?></a>
+      </div>
+      <!-- Card -->
     </div>
-    <div class="col-md-8 text-right">
-      <?php echo $pagination ?>
-    </div>
+
+    <?php
+  }
+  if ($start==0) {
+   ?>
+   <script>
+    redirectPesan('error','Datang Kembali Nanti');
+  </script>
+
+<?php } ?>
+</div>
+<div class="row mt-2">
+  <div class="col-md-4">
+    <a href="#" class="btn btn-elegant btn-sm disabled ">Jumlah Package : <?php echo $total_rows ?></a>
   </div>
+  <div class="col-md-8 text-right">
+    <?php echo $pagination ?>
+  </div>
+</div>
 </div>
 <!--Footer Links-->
 <div class="container ">
@@ -107,10 +134,16 @@ aria-hidden="true">
           </div>
           <div class="form-group">
             <label for="int">Package Pemesanan <?php echo form_error('id_package_pemesanan') ?></label>
-            <!-- <input type="text" class="form-control" name="id_package_pemesanan" id="Masukan id_package_pemesanan" placeholder="Id Package Pemesanan" value="<?php echo $id_package_pemesanan; ?>" /> -->
+            <input type="hidden" class="form-control" name="id_package_pemesanan" id="id_package_pemesanan" placeholder="Id Package Pemesanan" value="<?php 
+            if (isset($id_package_pemesanan)) {
+              echo $id_package_pemesanan;
+            }
+            ?>" />
+
+
             <select 
 
-            required class="browser-default custom-select" name="id_package_pemesanan" id="id_package_pemesanan">
+            required class="browser-default custom-select" disabled name="id_package_pemesanan_tampil" id="id_package_pemesanan_tampil">
             <option value="">Pilih Package</option>
             <?php foreach ($wo_package_data as $data) { ?>
               <option 
@@ -142,8 +175,22 @@ aria-hidden="true">
       <input type="text" required class="form-control datepickerBooking" name="tanggal_booking" id="tanggal_booking" placeholder="Tanggal Booking" value="<?php echo $tanggal_booking; ?>" />
     </div>
     <div class="form-group">
-      <label for="double">Masukan Jumlah Transfer<?php echo form_error('total_uang_masuk') ?></label>
-      <input type="number" required min="0" class="form-control" name="total_uang_masuk" id="Masukan total_uang_masuk" placeholder="Masukan Jumlah Transfer" value="<?php echo $total_uang_masuk; ?>" />
+      <div class="row">
+        <div class="col-md">
+          <label for="double">Jumlah DP Transfer<?php echo form_error('total_uang_masuk') ?></label>
+          <input type="hidden" required min="0" class="form-control" name="total_uang_masuk" id="total_uang_masuk" placeholder="Masukan Jumlah Transfer" value="<?php echo $total_uang_masuk; ?>" />
+          <p class="h5" id="total_uang_masuk_tampil"></p>
+        </div>
+        <div class="col-md">
+          <label for="double">Sisa Transfer</label>
+          <p class="h5" id="sisaTransfer"></p>
+        </div>
+      </div>
+      <?php if (isset($wo_include_data)): ?>
+
+        <p class="h6">- harga DP belum termasuk Adds on</p>
+        <p class="h6">- Adds on dibayar waktu pelunasan</p>
+      <?php endif ?>
     </div>
     <div class="form-group d-none">
       <label for="double">Total Uang Bayar <?php echo form_error('total_uang_bayar') ?></label>
@@ -213,68 +260,81 @@ aria-hidden="true">
 
       <input type="hidden" name="id_pemesanan" value="<?php echo $id_pemesanan; ?>" />
       <br>
-<?php if (isset($wo_include_data)): ?>
+
+
+
+
+
+
+      <?php if (isset($wo_include_data)): ?>
+
+
+
+
+
         <p class="h5">Adds On Package Rumahan | Ceklis</p>
-      <div class="table-responsive">
-        <table class="table table-hover text-nowrap table-sm text-center" style="margin-bottom: 10px">
-          <tr>
-            <th class="th-sm">No</th>
-            <th class="th-sm">Nama</th>
-            <th class="th-sm">Harga </th>
-            <th class="th-sm">Satuan </th>
-            <th class="th-sm">Foto</th>
-            <th class="th-sm">Jumlah</th>
-            </tr><?php
-            $start=0;
-            foreach ($wo_include_data as $wo_include)
-            {
-              ?>
+        <div class="table-responsive">
+          <div class="my-custom-scrollbar my-custom-scrollbar-primary">
+            <table class="table table-hover text-nowrap table-sm text-center" style="margin-bottom: 10px">
               <tr>
-               <td width="80px"><?php echo ++$start ?></td>
-               <td><?php echo $wo_include->nama_include ?></td>
-               <td><?php echo $wo_include->harga_include ?>
-                 <input type="hidden" name="hargaPesan[]" class="form-control kelasCekPesan" id="hargaPesan<?php echo $wo_include->id_include ?>" value="<?php echo $wo_include->harga_include ?>">    
-               </td>
-               <td><?php echo $wo_include->satuan_include ?></td>
-               <!-- <td><?php echo $wo_include->foto_include ?></td> -->
-               <td> <a href="<?php echo base_url('uploads/package/'.$wo_include->foto_include) ?>" target="_blank"><img class="zoom" height="30" width="30" src="<?php echo base_url('uploads/include/'.$wo_include->foto_include) ?>" alt="<?php echo $wo_include->foto_include ?>"></a>
-               </td>
-               <td style="text-align:center" width="120px">
-                <div class="form-check">
-                  <!-- <input type="checkbox" name="cekPesan<?php echo $wo_include->id_include ?>" data-idinclude="<?php echo $wo_include->id_include ?>" class="form-check-input kelasCekPesan" id="cekPesan<?php echo $wo_include->id_include ?>"> -->
+                <th class="th-sm">No</th>
+                <th class="th-sm">Nama</th>
+                <th class="th-sm">Harga </th>
+                <th class="th-sm">Satuan </th>
+                <th class="th-sm">Foto</th>
+                <th class="th-sm">Jumlah</th>
+                </tr><?php
+                $start=0;
+                foreach ($wo_include_data as $wo_include)
+                {
+                  ?>
+                  <tr>
+                   <td width="80px"><?php echo ++$start ?></td>
+                   <td><?php echo $wo_include->nama_include ?></td>
+                   <td><?php echo $wo_include->harga_include ?>
+                   <input type="hidden" name="hargaPesan[]" class="form-control kelasCekPesan" id="hargaPesan<?php echo $wo_include->id_include ?>" value="<?php echo $wo_include->harga_include ?>">    
+                 </td>
+                 <td><?php echo $wo_include->satuan_include ?></td>
+                 <!-- <td><?php echo $wo_include->foto_include ?></td> -->
+                 <td> <a href="<?php echo base_url('uploads/package/'.$wo_include->foto_include) ?>" target="_blank"><img class="zoom" height="30" width="30" src="<?php echo base_url('uploads/include/'.$wo_include->foto_include) ?>" alt="<?php echo $wo_include->foto_include ?>"></a>
+                 </td>
+                 <td style="text-align:center" width="120px">
+                  <div class="form-check">
+                    <!-- <input type="checkbox" name="cekPesan<?php echo $wo_include->id_include ?>" data-idinclude="<?php echo $wo_include->id_include ?>" class="form-check-input kelasCekPesan" id="cekPesan<?php echo $wo_include->id_include ?>"> -->
 
-                  <!-- <input type="checkbox" name="cekPesan<?php echo $wo_include->id_include ?>" data-idinclude="<?php echo $wo_include->id_include ?>" class="form-check-input kelasCekPesan" id="cekPesan<?php echo $wo_include->id_include ?>"> -->
+                    <!-- <input type="checkbox" name="cekPesan<?php echo $wo_include->id_include ?>" data-idinclude="<?php echo $wo_include->id_include ?>" class="form-check-input kelasCekPesan" id="cekPesan<?php echo $wo_include->id_include ?>"> -->
 
 
-                  <!-- <label class="form-check-label" for="cekPesan<?php echo $wo_include->id_include ?>">Pilih</label> -->
-                  <input type="number" name="cekPesan<?php echo $wo_include->id_include ?>" data-idinclude="<?php echo $wo_include->id_include ?>" class="form-control kelasCekPesan" id="cekPesan<?php echo $wo_include->id_include ?>">
-                </div>
-              </td>
-            </tr>
-            <?php
-          }
-          if ($start==0) {
-            ?>
-            <script>
-              redirectPesan('error','Data tidak ditemukan');
-            </script>   
-          <?php } ?>
-        </table>
+                    <!-- <label class="form-check-label" for="cekPesan<?php echo $wo_include->id_include ?>">Pilih</label> -->
+                    <input type="number" name="cekPesan<?php echo $wo_include->id_include ?>" data-idinclude="<?php echo $wo_include->id_include ?>" class="form-control kelasCekPesan" id="cekPesan<?php echo $wo_include->id_include ?>">
+                  </div>
+                </td>
+              </tr>
+              <?php
+            }
+            if ($start==0) {
+              ?>
+              <script>
+                redirectPesan('error','Data tidak ditemukan');
+              </script>   
+            <?php } ?>
+          </table>
+        </div>
       </div>
-<?php endif ?>
+    <?php endif ?>
 
+  </div>
+  <div class="modal-footer d-flex justify-content-center">
+
+    <?php if ($this->session->userdata('logged')): ?>
+      <button type="submit" id="submitPemesanan" class="btn btn-primary btn-rounded"><?php echo $button ?></button> 
+      <?php else: ?>
+
+      <?php endif ?>
+      <a href="<?php echo site_url('beranda/packageGedung_Aula') ?>" class="btn btn-danger btn-rounded">Batal</a>
     </div>
-    <div class="modal-footer d-flex justify-content-center">
-
-      <?php if ($this->session->userdata('logged')): ?>
-        <button type="submit" id="submitPemesanan" class="btn btn-primary btn-rounded"><?php echo $button ?></button> 
-        <?php else: ?>
-
-        <?php endif ?>
-        <a href="<?php echo site_url('beranda/packageGedung_Aula') ?>" class="btn btn-danger btn-rounded">Batal</a>
-      </div>
-    </div>
-  </form> 
+  </div>
+</form> 
 </div>
 </div>
 
