@@ -59,11 +59,22 @@ class Login extends CI_Controller {
 				'id_user' => $ambilData->id_user,
 				'nama' => $ambilData->nama_user,
 				'alamat' => $ambilData->alamat,
-				'hp' => $ambilData->alamat,
+				'hp' => $ambilData->hp,
 				'logged' => true
 			);
+
+$cekVerify = $ambilData->verify;
+
+if ($cekVerify==1) {
+			// $this->session->set_userdata($data);
+			$this->session->set_flashdata('pesan', 'Email Anda belum terverifikasi');
+	
+}elseif ($cekVerify==2) {
+	
 			$this->session->set_userdata($data);
 			$this->session->set_flashdata('pesan', 'Berhasil Login');
+			
+}
 			redirect('beranda','refresh');
 		}else {
 			$this->session->set_flashdata('pesan', 'Gagal Login');
