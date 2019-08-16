@@ -36,7 +36,7 @@
 				9. Setelah pihak Kampus Dekorasi mengkonfirmasi pesanan, pemesan dapat melakukan sisa pembayaran<br>
 				<br></li>
 				
-				
+			
 				<li>Pelunasan Maksimal H-1 jika terlambat1 hari akan dikenakan denda sebesar 10% dari harga dealing.
 				</li>
 				<li>

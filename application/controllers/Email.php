@@ -58,6 +58,7 @@ class Email extends CI_Controller {
 		if (isset($email)) {
 			$email = $this->input->post('email');
 		}else{
+
 			$email = "amailiacahya@gmail.com";
 		}
 		if (isset($nama)) {

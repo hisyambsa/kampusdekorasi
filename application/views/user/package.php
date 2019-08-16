@@ -47,7 +47,10 @@
         <!-- Button -->
         <p class="text-center"><?php echo 'Rp. '.number_format($wo_package->harga_package,0,',','.'); ?></p> 
         <?php if ($this->session->userdata('logged')): ?>
-          <!-- <?php if ($jumlahPemesananHariIni<2): ?> -->
+<?php if (isset($jumlahPemesananHariIni)): ?>
+  <?php endif ?>
+          <?php if ($jumlahPemesananHariIni<2): ?>
+
             <button href="" data-idPackage="<?php echo $wo_package->id_package ?>" class="btn btn-primary btn-sm btn-rounded float-right klikBooking" data-toggle="modal" data-target="#modalBooking" data-harga="<?php echo $wo_package->harga_package ?>">Booking</button> <?php else: ?>
             <button class="btn btn-primary btn-sm btn-rounded float-right" onclick="redirectPesan('error','kuota anda hari ini sudah habis')">Booking</button>
           <?php endif ?>

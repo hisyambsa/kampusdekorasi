@@ -55,6 +55,12 @@ class Beranda extends CI_Controller {
 		$wo_user = $this->Wo_user_model->get_limit_data(999);
     // $wo_package = $this->Wo_package_model->get_limit_data(999);
 
+
+		$this->load->model('Wo_pemesanan_model');
+		$jumlahPemesananHariIni = $this->Wo_pemesanan_model->total_pemesanan_hari_ini();
+
+
+
 		$data = array(
 			'judulPackage' => 'Daftar Package Gedung / Aula',
 			'wo_package_data' => $wo_package,
@@ -62,6 +68,7 @@ class Beranda extends CI_Controller {
 			'pagination' => $this->pagination->create_links(),
 			'total_rows' => $config['total_rows'],
 			'start' => $start,
+			'jumlahPemesananHariIni'=>$jumlahPemesananHariIni,
 
 // PEMESANANAN
 			'button' => 'Buat',
@@ -79,6 +86,11 @@ class Beranda extends CI_Controller {
 		);
 		$this->load->model('Wo_user_model');
 		$this->load->model('Wo_package_model');
+
+
+
+
+
 		$this->load->view('user/package', $data);
 		$this->load->view('inc/footer-js-admin');
 		$this->load->view('inc/function-js-admin');
@@ -213,7 +225,7 @@ class Beranda extends CI_Controller {
 	public function syarat_ketentuan()
 	{
 		$data = array(
-			'judul' => 'KAMPUS DEKORASI', 
+			'judul' => 'Kampus Dekorasi', 
 		);
 		$this->load->view('inc/link-head-admin',$data);
 		$this->load->view('user/nav');
@@ -306,7 +318,8 @@ class Beranda extends CI_Controller {
 					'email' => $this->input->post('email',TRUE),
 					'random_code' => $md5_code,
 					'verify' => '1'
-				); 
+				);
+
 				$this->Wo_user_model->insert($data);
 				$this->session->set_flashdata('pesan', 'Berhasil melakukan Pendaftaran, silahkan cek email untuk verifikasi');
 				// redirect(site_url('beranda'));
@@ -398,12 +411,9 @@ $this->load->model('Wo_user_model');
 
 public function pemesanan($foto='')
 {
-
 	$user = $this->session->userdata('id_user');
 
 	if (is_null($user)) {
-
-
 		$this->session->set_flashdata('pesan', 'Anda Belum Login');
 		$this->session->set_flashdata('jenisPesan', 'info');
 		redirect('beranda');
