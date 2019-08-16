@@ -1,4 +1,4 @@
-
+!
 <div class="row">
   <div class="col-md-4"><img style="position: absolute; top: 30px; left :325px;" height="70" width="70" src="<?php echo base_url("img/logo.png") ?>" alt="logo"></div>
   <div class="col-md-8 text-center">
@@ -7,14 +7,18 @@
 
 
     <style>
-      th,td{
+      table,th,td{
         text-align: center;
+        border-collapse: collapse;
       }
       th{
         font-size: 14px;
+        border-style: groove;
       }
       td{
         font-size: 12px;
+        border-style: groove;
+        /*border-style: groove;*/
       }
     </style>
 
