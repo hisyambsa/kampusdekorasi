@@ -150,7 +150,7 @@ class Wo_include extends CI_Controller
             $foto_include = 'foto_include';
             $foto_include = $this->Upload_model->ambiltempatupload($foto_include,'include',$this->input->post('nama_include',TRUE));
             if (is_array($foto_include)) {
-                $this->create($foto_include['error']);
+                $this->update($this->input->post('id_include', TRUE),$foto_include['error']);
             }else{        
                 $data = array(
                   'nama_include' => $this->input->post('nama_include',TRUE),

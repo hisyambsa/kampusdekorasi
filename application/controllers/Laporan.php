@@ -36,10 +36,6 @@ class Laporan extends CI_Controller {
 		$this->load->model('Wo_pemesanan_model');
 
 
-		echo "<br><br><br>";
-
-		echo $this->input->post('pilihLaporan');
-
 		$namaLaporan = $this->input->post('pilihLaporan');
 		$tanggalAwal = $this->input->post('tanggalAwal');
 		$tanggalAkhir = $this->input->post('tanggalAkhir');
@@ -55,7 +51,6 @@ class Laporan extends CI_Controller {
 		$wo_pemesanan = $this->Wo_pemesanan_model->get_limit_data_laporan(0,$tanggalAwal,$tanggalAkhir,'tanggal_'.$namaLaporan);
 		$config['total_rows'] = $this->Wo_pemesanan_model->total_rows_laporan($tanggalAwal,$tanggalAkhir,'tanggal_'.$namaLaporan);
 
-		echo "string";
 		$data = array(
 			'namaLaporan' => $namaLaporan,
 			'tanggalAwal' => $dateBegin,
