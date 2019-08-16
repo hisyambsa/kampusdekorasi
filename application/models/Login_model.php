@@ -42,7 +42,7 @@ class Login_model extends CI_Model {
 
 	function login($username,$password) {
 
-		$this->db->where('hp', $username);
+		$this->db->where('email', $username);
 		$this->db->where('tanggal_lahir', $password);
 		$query =  $this->db->get($this->table_pegawai);
 		// var_dump($query);
@@ -57,7 +57,7 @@ class Login_model extends CI_Model {
 	//    untuk mengambil data hasil login
 	function data_login($username) {
 	    // $pass = password_verify($password, $hash);
-		$this->db->where('hp', $username);
+		$this->db->where('email', $username);
 		// $this->db->where('tanggal_lahir', $password);
 	    // $this->db->where('password', $password);
 		return $this->db->get($this->table_pegawai)->row();

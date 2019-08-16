@@ -6,12 +6,12 @@
     </a>
   </div>
   <div class="col-md-3 text-center mt-2">
-    <?php echo anchor(site_url('wo_include/create'),'Buat Wo_include', 'class="btn btn-primary btn-rounded d-inline"'); ?>
+    <?php echo anchor(site_url('wo_include/create'),'Buat Add On Package', 'class="btn btn-primary btn-rounded d-inline"'); ?>
     <br>
     <br>
   </div>
   <div class="col-md-4 text-center">
-    <h2 style="margin-top:0px">Daftar Wo_include</h2>
+    <h2 style="margin-top:0px">Daftar Add On Package</h2>
   </div>
   <div class="col-md-4 text-right">
     <form action="<?php echo site_url('wo_include/index'); ?>" class="form-group" method="get">
@@ -36,10 +36,10 @@
   <table class="table table-hover text-nowrap table-sm text-center" style="margin-bottom: 10px">
     <tr>
       <th class="th-sm">No</th>
-      <th class="th-sm">Nama Include</th>
-      <th class="th-sm">Harga Include</th>
-      <th class="th-sm">Satuan Include</th>
-      <th class="th-sm">Foto Include</th>
+      <th class="th-sm">Nama Add On</th>
+      <th class="th-sm">Harga Add On</th>
+      <th class="th-sm">Satuan Add On</th>
+      <th class="th-sm">Foto Add On</th>
       <th class="th-sm">Aksi</th>
       </tr><?php
       foreach ($wo_include_data as $wo_include)

@@ -33,6 +33,8 @@
 <script src="<?php echo base_url('assets/pickadate/lib/picker.date.js') ?>"></script>
 
 
+<script src="<?php echo base_url('assets/node_modules/lightbox2/dist/js/lightbox.js') ?>" ></script>
+
 
 <script>
 $('.booking_false').click(function() {
@@ -78,7 +80,7 @@ Ps.initialize(sideNavScrollbar);
 
     // initialize lightbox
     $(function () {
-      $("#mdb-lightbox-ui ").load("mdb-addons/mdb-lightbox-ui.html ");
+      // $("#mdb-lightbox-ui ").load("mdb-addons/mdb-lightbox-ui.html ");
     });
 
     /* WOW.js init */
@@ -117,8 +119,8 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
 
 
 $('.datepicker').pickadate({
-  selectMonths: true,
-  selectYears: true,
+  selectMonths: 12,
+  selectYears: 100,
   formatSubmit: 'yyyy-mm-dd',  max: true
 });
 $('.datepickerNow').pickadate({

@@ -21,6 +21,7 @@
 
 });
 
+
   $('#form_submit').submit(function(e) {
 
 // alert(data_id_include);
@@ -98,6 +99,52 @@ $.ajax({
   $('#modalBooking').on('show.bs.modal', function (event) {
 
    var button = $(event.relatedTarget);
+
+   let dataIdPackage = button.data("idpackage");
+   $('#id_package_pemesanan').val(dataIdPackage);
+      $('#id_package_pemesanan_tampil').val(dataIdPackage);
+
+
+   let datadp = button.data("harga");
+   datadp = (datadp*20);
+   datadp = (datadp/100);
+   $('#total_uang_masuk').val(datadp);
+
+
+var number_string = datadp.toString(),
+  sisa  = number_string.length % 3,
+  rupiah  = number_string.substr(0, sisa),
+  ribuan  = number_string.substr(sisa).match(/\d{3}/g);
+    
+if (ribuan) {
+  separator = sisa ? '.' : '';
+  rupiah += separator + ribuan.join('.');
+}
+   
+
+      $('#total_uang_masuk_tampil').html("Rp. "+rupiah+",-");
+
+   let datasisa = button.data("harga");
+   datasisa = (datasisa*80);
+   datasisa = (datasisa/100);
+   $('#total_uang_masuk').val(datasisa);
+
+
+var number_string = datasisa.toString(),
+  sisa  = number_string.length % 3,
+  rupiah  = number_string.substr(0, sisa),
+  ribuan  = number_string.substr(sisa).match(/\d{3}/g);
+    
+if (ribuan) {
+  separator = sisa ? '.' : '';
+  rupiah += separator + ribuan.join('.');
+}
+
+
+
+      $('#sisaTransfer').html("Rp. "+rupiah+",-");
+
+
 
    let dataHarga = button.data("harga");
    $('#total_uang_bayar').val(dataHarga);

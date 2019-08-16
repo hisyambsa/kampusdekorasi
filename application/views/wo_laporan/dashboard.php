@@ -17,7 +17,7 @@
 					<!-- Material checked -->
 					<div class="form-check form-check-inline">
 						<input type="radio" class="form-check-input" id="pilihLapBooking" name="pilihLaporan" value="booking">
-						<label class="form-check-label" for="pilihLapBooking">Booking</label>
+						<label class="form-check-label" for="pilihLapBooking">Pelunasan</label>
 					</div>
 				</div>
 				<br>

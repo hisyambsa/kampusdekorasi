@@ -54,3 +54,7 @@ body, html {
 .navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
     /*color: #272402;*/
 }
+
+.bg-dark {
+    background-color: #c62669ab !important;
+    }

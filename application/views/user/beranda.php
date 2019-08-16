@@ -13,34 +13,34 @@
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
             <div class="view">
-              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider1.jpg') ?>" alt="First slide">
+              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider1.png') ?>" alt="First slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
-              <h3 class="h3-responsive">Pelaminan</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident aspernatur autem, hic, aperiam illo magni obcaecati culpa nihil nam.</p>
+              <h3 class="h3-responsive"></h3>
+              <!--<p>Pelaminan yang tersedia di kampus dekorasi meliputi : Pelaminan, Standing Flower pelaminan dan Jalan masuk, Mini Garden, Dekor pohon, Red Karpet, Kotak Angpau, Gapura Pintu Masuk, Meja Terima Tamu, Buku tamu, Display/Photobooth, Meja & kursi Akad.</p>-->
             </div>
           </div>
           <div class="carousel-item">
             <!--Mask color-->
             <div class="view">
-              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider2.jpg') ?>" alt="Second slide">
+              <img class="d-block w-100 maxHeight600" src="<?php echo base_url('img/slider-img/slider2.png') ?>" alt="Second slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
-              <h3 class="h3-responsive">Tenda</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis provident iure, nobis in reprehenderit vitae et iste cumque libero minima.</p>
+              <h3 class="h3-responsive"></h3>
+              <!--<p> yang tersedia di kampus dekorasi meliputi : Tenda, Kursi Pultura + Sarung, Kipas Blower, Meja bundar,Extra Meja Kotak, Gubugan,Meja + peralatan Prasmanan, Full karpet, peralatan Masak.</p>-->
             </div>
           </div>
           <div class="carousel-item">
             <!--Mask color-->
             <div class="view">
-              <img class="d-block w-100 maxHeight600 " src="<?php echo base_url('img/slider-img/slider3.jpg') ?>" alt="Third slide">
+              <img class="d-block w-100 maxHeight600 " src="<?php echo base_url('img/slider-img/slider3.png') ?>" alt="Third slide">
               <div class="mask rgba-black-light"></div>
             </div>
             <div class="carousel-caption">
-              <h3 class="h3-responsive">Rias Pengantin</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, nemo quam consequatur quae et nihil natus adipisci maiores ducimus repellendus.</p>
+              <h3 class="h3-responsive"></h3>
+              <!--<p> yang tersedia di kampus dekorasi meliputi : MakeUp, Sanggul/hijab, Stylis Pria, Retouch MakeUp Pengantin, Kebaya pengantin Akad, Beskap/jas pengantin akad,  Kebaya/gaun + Beskap/jas pengantin pengantin resepsi, MakeUp + Kebaya Ibu, Beskap Bapak, Baju Pagar Ayu + MakeUp.</p>-->
             </div>
           </div>
         </div>
@@ -68,9 +68,9 @@
         <h3 class="text-center text-uppercase font-weight-bold my-4 mt-2 ml-3 mr-3 wow fadeIn" data-wow-delay="0.2s">Kampus Dekorasi</h3>
         <!-- Text -->
         <p class="grey-text ml-5 mr-5 mb-5 text-justify">
-          Kampus Dekorasi merupakan salah satu unit usaha yang menyediakan pelayanan jasa Dekorasi pernikahan yang.... #mentok ga ada kata masa akuuuuuu.......... <br><br>
+          Kampus Dekorasi merupakan salah satu unit usaha yang menyediakan pelayanan jasa pernikahan yang ada di daerah Bojonggede Bogor. Kampus Dekorasi menyediakan beberapa paket dekorasi pernikahan. <br><br>
 
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea laboriosam, blanditiis ipsum et quidem iusto, voluptatem optio minus soluta delectus itaque voluptate! Quod cumque quis laboriosam architecto cum qui, vero eius ipsum sint inventore culpa sit eveniet nisi assumenda magni tenetur, nobis dicta hic rem quidem vel. Qui, adipisci, eum.
+          Kampus Dekorasi beralamat di Kp. Setu RT 03/05 Desa Bojonggede kecamatan Bojonggede. Kampus Dekorasi telah berdiri sejak tahun 2016 dan sampai sekarang terus berkembang pesat untuk melayani calon pengantin. Kampus Dekorasi yang dipimpin oleh Bapak Iwan Kurniawan ini sudah berpengalaman dalam melayani para calon pengantin. Kampus dekorasi merupakan salah satu anggota dari Asosiasi Pengusaha  Dekorasi Indonesia (ASPEDI) DWP Jawa Barat. Dalam menjalankan bisnisnya Kampus Dekorasi memiliki izin dari depag dengan nomor 503/21/IV/2018.
         </p>
       </div>
     </div>
@@ -102,7 +102,7 @@
               <p class="grey-text">&nbsp</p>
             </div>
             <!--/.Panel-->
-          </div>
+          </div> 
           <!-- /.Second column -->
 
         </div>
@@ -137,17 +137,15 @@
               <!--Card content-->
               <div class="card-body card-body-cascade text-center">
                 <!--Title-->
-                <h4 class="card-title"><strong>Package</strong></h4>
-                <h5 class="indigo-text"><strong>Pelaminan</strong></h5>
+                <!-- <h4 class="card-title"><strong>Package</strong></h4> -->
+                <h5 class="indigo-text"><strong>Detail Pelaminan</strong></h5>
 
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-                  laudantium, totam
-                  rem aperiam.
+                <p class="card-text">Pelaminan yang tersedia di kampus dekorasi meliputi : Pelaminan, Standing Flower pelaminan dan Jalan masuk, Mini Garden, Dekor pohon, Red Karpet, Kotak Angpau, Gapura Pintu Masuk, Meja Terima Tamu, Buku tamu, Display/Photobooth, Meja & kursi Akad.
                 </p>
 
 
                 <!--Linkedin-->
-                <a href="#"><button class="btn btn-primary">Detail</button></a>
+                <!--<a href="#"><button class="btn btn-primary">Detail</button></a> -->
               </div>
               <!--/.Card content-->
 
@@ -170,17 +168,15 @@
               <!--Card content-->
               <div class="card-body card-body-cascade text-center">
                 <!--Title-->
-                <h4 class="card-title"><strong>Package</strong></h4>
-                <h5 class="indigo-text"><strong>Tenda</strong></h5>
+                <!--<h4 class="card-title"><strong>Package</strong></h4>-->
+                <h5 class="indigo-text"><strong>Detail Tenda</strong></h5>
 
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-                  laudantium, totam
-                  rem aperiam.
+                <p class="card-text">Yang tersedia di kampus dekorasi meliputi : Tenda, Kursi Pultura + Sarung, Kipas Blower, Meja bundar,Extra Meja Kotak, Gubugan,Meja + peralatan Prasmanan, Full karpet, peralatan Masak.
                 </p>
 
 
                 <!--Linkedin-->
-                <a href="#"><button class="btn btn-primary">Detail</button></a>
+                <!--<a href="#"><button class="btn btn-primary">Detail</button></a> -->
               </div>
               <!--/.Card content-->
             </div>
@@ -202,15 +198,13 @@
               <!--Card content-->
               <div class="card-body card-body-cascade text-center">
                 <!--Title-->
-                <h4 class="card-title"><strong>Package</strong></h4>
-                <h5 class="indigo-text"><strong>Rias Pengantin</strong></h5>
+                <!--<h4 class="card-title"><strong>Package</strong></h4>-->
+                <h5 class="indigo-text"><strong>Detail Rias Pengantin</strong></h5>
 
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
-                  laudantium, totam
-                  rem aperiam.
+                <p class="card-text">Yang tersedia di kampus dekorasi meliputi : MakeUp, Sanggul/hijab, Stylis Pria, Retouch MakeUp Pengantin, Kebaya pengantin Akad, Beskap/jas pengantin akad,  Kebaya/gaun + Beskap/jas pengantin pengantin resepsi, MakeUp + Kebaya Ibu, Beskap Bapak, Baju Pagar Ayu + MakeUp.
                 </p>
                 <!--Linkedin-->
-                <a href="#"><button class="btn btn-primary">Detail</button></a>
+                <!--<a href="#"><button class="btn btn-primary">Detail</button></a>-->
               </div>
               <!--/.Card content-->
             </div>
@@ -227,10 +221,7 @@
       <h2 class="blue-text text-center text-uppercase font-weight-bold wow fadeIn" data-wow-delay="0.2s"> Hasil Karya <i class="fas fa-tasks"></i></h2>
       <!-- Section description -->
       <div class="container">
-        <p class="mb-5 w-responsive mx-auto grey-text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit. Quia iste provident, voluptatum voluptatibus aut modi aspernatur autem impedit, eius, debitis earum
-          voluptatem. Quaerat hic aspernatur laborum magni earum. Repellendus voluptatum, magni impedit eaque delectus,
-        beatae maxime temporibus maiores quibusdam quasi.</p>
+        <p class="mb-5 w-responsive mx-auto grey-text text-justify">ini adalah beberapa referensi untuk anda , kami dari Kampus Dekorasi berusaha keras dalam mewujudkan impian pernikahan anda, jika anda ingin Cek lebih banyak referensi anda dapat chat via WhatsApp kami akan merasa senang.</p>
 
 
         <!-- Grid row -->
@@ -239,7 +230,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-12 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/1.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -248,7 +239,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-6 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/12.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/2.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -257,7 +248,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-6 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/3.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -271,7 +262,7 @@
           <!-- Grid column -->
           <div class="col-lg-3 col-md-42 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/12.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/4.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -280,7 +271,7 @@
           <!-- Grid column -->
           <div class="col-lg-3 col-md-4 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/5.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -289,13 +280,13 @@
           <!-- Grid column -->
           <div class="col-lg-3 col-md-4 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/6.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
           <div class="col-lg-3 col-md-4 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/7.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -309,7 +300,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-12 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/8.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -318,7 +309,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-6 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/9.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -327,7 +318,7 @@
           <!-- Grid column -->
           <div class="col-lg-4 col-md-6 mb-3">
 
-            <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid z-depth-1"
+            <img src="<?php echo base_url('img/portofolio/10.jpg') ?>" class="img-fluid z-depth-1"
             alt="Responsive image">
 
           </div>
@@ -358,19 +349,19 @@
 
             <!--Second column-->
             <div class="col-md-3 flex-center ">
-              <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid ">
+              <img src="<?php echo base_url('img/portofolio/12.jpg') ?>" class="img-fluid ">
             </div>
             <!--/Second column-->
 
             <!--Third column-->
             <div class="col-md-3 flex-center ">
-              <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid ">
+              <img src="<?php echo base_url('img/portofolio/13.jpg') ?>" class="img-fluid ">
             </div>
             <!--/Third column-->
 
             <!--Fourth column-->
             <div class="col-md-3 flex-center ">
-              <img src="<?php echo base_url('img/portofolio/11.jpg') ?>" class="img-fluid ">
+              <img src="<?php echo base_url('img/portofolio/14.jpg') ?>" class="img-fluid ">
             </div>
             <!--/Fourth column-->
 
@@ -401,9 +392,7 @@
 
           <!--Grid column-->
           <div class="col-md-8 mb-5 text-center">
-           <iframe src="http://localhost/phpmyadmin/" frameborder="0">
-
-           </iframe>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15856.98998749632!2d106.79628792406372!3d-6.4903131326016705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c239427d543b%3A0x199c4357c5412312!2sKampus+Dekorasi!5e0!3m2!1sid!2sid!4v1564829700190!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
          </div>
          <!--Grid column-->
 
@@ -415,7 +404,7 @@
             </li>
 
             <li><i class="fas fa-phone fa-2x "></i>
-              <p class="grey-text ">+62 81905096881</p>
+              <p class="grey-text ">+62 85885468865</p>
             </li>
 
             <li><i class="fas fa-envelope fa-2x "></i>

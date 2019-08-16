@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'judul' => 'Admin WO', 
+			'judul' => 'ADMIN KAMPUS DEKORASI', 
 		);
 		$this->load->view('inc/link-head-admin',$data);
 		$this->load->view('admin/sidebar');

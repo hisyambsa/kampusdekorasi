@@ -17,7 +17,7 @@
         <!-- <h2 style="margin-top:0px">Daftar Wo_include</h2> -->
     </div>
     <div class="col-md-4 text-right">
-        <form action="<?php echo site_url('wo_include/index'); ?>" class="form-group" method="get">
+        <form action="<?php echo site_url('beranda/include_package'); ?>" class="form-group" method="get">
             <div class="input-group">
                 <input type="text" class="form-control mt-2" name="q" value="<?php echo $q; ?>">
                 <span class="input-group-btn">
@@ -25,7 +25,7 @@
                     if ($q <> '')
                     {
                         ?>
-                        <a href="<?php echo site_url('wo_include'); ?>" class="btn btn-amber">Ulangi</a>
+                        <a href="<?php echo site_url('beranda/include_package'); ?>" class="btn btn-amber">Ulangi</a>
                         <?php
                     }
                     ?>

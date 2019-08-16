@@ -1,5 +1,5 @@
 
-<h2 style="margin-top:0px"><?php echo $button ?> Wo_user </h2>
+<h2 style="margin-top:0px"><?php echo $button ?> Account User </h2>
 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
   <div class="row">
     <div class="col-md">

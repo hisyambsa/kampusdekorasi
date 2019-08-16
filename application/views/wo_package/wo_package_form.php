@@ -1,5 +1,5 @@
 
-<h2 style="margin-top:0px"><?php echo $button ?> Master WO Package </h2>
+<h2 style="margin-top:0px"><?php echo $button ?> Master Package </h2>
 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md">

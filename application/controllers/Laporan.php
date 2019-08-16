@@ -10,10 +10,10 @@ class Laporan extends CI_Controller {
 
 	public function index()
 	{
-		$admin = array(
+		$admin = array( 
 			'judul' => 'BERANDA ADMIN', 
 		);
-		$this->load->view('inc/link-head-admin',$admin);
+		$this->load->view('inc/link-head-admin',$admin); 
 		$this->load->view('admin/sidebar');
 
 		$this->load->view('wo_laporan/dashboard');

@@ -27,10 +27,10 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/include_package') ?>" data-offset="100">Include</a>
+            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/include_package') ?>" data-offset="100">Add On Package</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/syarat_ketentuan') ?>" data-offset="100">Syarat dan Ketentuan</a>
+            <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/syarat_ketentuan') ?>" data-offset="100">Prosedur Pemesanan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-uppercase" href="<?php echo base_url('beranda/pemesanan') ?>" data-offset="100">Pemesanan</a>
@@ -39,20 +39,20 @@
         <!-- Social Icon  -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a href="https://www.instagram.com/hisyambsa" class="nav-link"><i class="fab fa-facebook-f light-green-text-2"></i></a>
+            <a href="https://www.instagram.com/amailiacahya" class="nav-link"><i class="fab fa-facebook-f light-green-text-2"></i></a>
           </li>
           <li class="nav-item">
-            <a href="https://www.instagram.com/hisyambsa" class="nav-link"><i class="fab fa-twitter light-green-text-2"></i></a>
+            <a href="https://www.instagram.com/amailiacahya" class="nav-link"><i class="fab fa-twitter light-green-text-2"></i></a>
           </li>
           <li class="nav-item">
-            <a href="https://www.instagram.com/hisyambsa" class="nav-link"><i class="fab fa-instagram light-green-text-2"></i></a>
+            <a href="https://www.instagram.com/amailiacahya" class="nav-link"><i class="fab fa-instagram light-green-text-2"></i></a>
           </li>
           <?php if (is_null($this->session->userdata('id_user'))): ?>
             <li class="nav-item">
               <a type="button" class="nav-link" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" title="Login" data-content="
               <div class='form-group'>
                 <form class='text-center' action='<?php echo base_url()?>login/auth' method='post' style='color: #757575;'>
-                  <input type='password' name='username' placeholder='Nomor Hp' class='form-control' maxlength='20'>
+                  <input type='email' name='username' placeholder='Masukan Email' class='form-control' maxlength='50'>
                   <br> 
                   <input type='password' name='password' placeholder='Tangggal Lahir' class='form-control' maxlength='10'>
                   <br>

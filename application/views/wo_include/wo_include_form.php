@@ -1,25 +1,25 @@
 
-<h2 style="margin-top:0px"><?php echo $button ?> Master WO Include </h2>
+<h2 style="margin-top:0px"><?php echo $button ?> Master Add On Package </h2>
 <h4><?php echo validation_errors(); ?></h4>
 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md">
             <div class="form-group">
                 <label for="varchar">Nama Include <?php echo form_error('nama_include') ?></label>
-                <input type="text" class="form-control" name="nama_include" id="Masukan nama_include" placeholder="Nama Include" value="<?php echo $nama_include; ?>" />
+                <input type="text" class="form-control" name="nama_include" id="Masukan nama_include" placeholder="Nama Add On" value="<?php echo $nama_include; ?>" />
             </div>
             <div class="form-group">
                 <label for="double">Harga Include <?php echo form_error('harga_include') ?></label>
-                <input type="text" class="form-control" name="harga_include" id="Masukan harga_include" placeholder="Harga Include" value="<?php echo $harga_include; ?>" />
+                <input type="text" class="form-control" name="harga_include" id="Masukan harga_include" placeholder="Harga Add On" value="<?php echo $harga_include; ?>" />
             </div>
             <div class="form-group">
                 <label for="varchar">Satuan Include <?php echo form_error('satuan_include') ?></label>
-                <input type="text" class="form-control" name="satuan_include" id="Masukan satuan_include" placeholder="Satuan Include" value="<?php echo $satuan_include; ?>" />
+                <input type="text" class="form-control" name="satuan_include" id="Masukan satuan_include" placeholder="Satuan Add On" value="<?php echo $satuan_include; ?>" />
             </div>
         </div>
         <div class="col-md">
             <div class="form-group">
-              <label for="varchar">Foto Include ( max: 2MB dan jpg/jpeg/png ) </label><?php echo form_error('foto_include') ?>
+              <label for="varchar">Foto Add On ( max: 2MB dan jpg/jpeg/png ) </label><?php echo form_error('foto_include') ?>
               <div class="text-danger" for="varchar"><?php  if (isset($foto)) {
                 echo $foto;
             } ?></div>

@@ -10,7 +10,7 @@ class Wo_package extends CI_Controller
         $this->load->library('form_validation');
 
         $admin = array(
-            'judul' => 'WO - Package', 
+            'judul' => 'Package Kampus Dekorasi', 
         );
         $this->load->view('inc/link-head-admin',$admin);
         $this->load->view('admin/sidebar');

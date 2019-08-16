@@ -10,7 +10,7 @@ class Wo_include extends CI_Controller
         $this->load->library('form_validation');
 
         $admin = array(
-            'judul' => 'WO - Include', 
+            'judul' => 'KAMPUS DEKORASI', 
         );
         $this->load->view('inc/link-head-admin',$admin);
         $this->load->view('admin/sidebar');

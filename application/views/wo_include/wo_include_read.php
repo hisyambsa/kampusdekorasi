@@ -1,14 +1,6 @@
 
 <?php 
-/*
-<!-- .................................. -->
-<!-- ...........COPYRIGHT ............. -->
-<!-- Authors : Hisyam Husein .......... -->
-<!-- Email : hisyam.husein@gmail.com .. -->
-<!-- About : hisyam.ismul.com ......... -->
-<!-- Instagram : @hisyambsa............ -->
-<!-- .................................. -->
-*/
+
 ?>
 <h2 style="margin-top:0px">Lihat Wo_include</h2>
         <table class="table">

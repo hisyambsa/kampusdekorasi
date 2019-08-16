@@ -50,6 +50,15 @@ class Wo_package_model extends CI_Model
         $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
+
+    // get total rows
+    function total_rows_gedung($q = NULL) {
+        $this->db->where('jenis_package', '1');
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+
         function get_limit_data_gedung($limit, $start = 0, $q = NULL) {
         $this->db->order_by($this->id, $this->order);
         $this->db->where('jenis_package', '1');
@@ -62,6 +71,14 @@ class Wo_package_model extends CI_Model
         $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
+
+    // get total rows
+    function total_rows_rumahan($q = NULL) {
+        $this->db->where('jenis_package', '2');
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
 
     // insert data
     function insert($data)

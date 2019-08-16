@@ -123,6 +123,13 @@ class Wo_pemesanan_model extends CI_Model
         return $this->db->get($this->table)->result();
     }
 
+        // get total rows
+    function total_pemesanan_hari_ini($q = NULL) {
+        $this->db->where('id_user_pemesanan', $this->session->userdata('id_user'));
+        $this->db->where('tanggal_pemesanan', date('Y-m-d'));
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
     // get total rows
     function total_rows_laporan($first_date, $second_date,$jenisLaporan) {
         $this->db->where($jenisLaporan.'>=', $first_date);

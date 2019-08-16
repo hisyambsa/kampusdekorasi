@@ -35,13 +35,13 @@
                 </div>
               </li>
             <?php endif ?>
-            <li id="menu-item-43623" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children  menu-item-43623"><a class="collapsible-header waves-effect arrow-r"><i class="fab fa-css3"></i> Master WO<i class="fa fa-angle-down rotate-icon"></i></a>
+            <li id="menu-item-43623" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children  menu-item-43623"><a class="collapsible-header waves-effect arrow-r"><i class="fab fa-css3"></i> Master Kampus Dekorasi<i class="fa fa-angle-down rotate-icon"></i></a>
              <div class="collapsible-body"  style="display: block;"> 
               <ul class="sub-menu">
                 <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
                   <a class=" waves-effect" href="<?php echo base_url('wo_Package') ?>"><i class="fas fa-user-tag"></i> Package</a>
                   <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
-                    <a class=" waves-effect" href="<?php echo base_url('wo_Include') ?>"><i class="fas fa-user-friends"></i> Include</a>
+                    <a class=" waves-effect" href="<?php echo base_url('wo_Include') ?>"><i class="fas fa-user-friends"></i> Add On Package</a>
                   </li>
                   <li id="menu-item-77919" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-77919">
                     <a class=" waves-effect" href="<?php echo base_url('wo_User') ?>"><i class="fas fa-user-friends"></i> User</a>

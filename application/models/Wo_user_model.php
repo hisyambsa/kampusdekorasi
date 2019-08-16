@@ -66,6 +66,12 @@ class Wo_user_model extends CI_Model
         $this->db->update($this->table, $data);
     }
 
+        function update_verify($id, $data)
+    {
+        $this->db->where('random_code', $id);
+        $this->db->update($this->table, $data);
+    }
+
     // delete data
     function delete($id)
     {

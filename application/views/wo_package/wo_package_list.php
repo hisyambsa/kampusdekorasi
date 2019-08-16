@@ -6,12 +6,12 @@
     </a>
   </div>
   <div class="col-md-3 text-center mt-2">
-    <?php echo anchor(site_url('wo_package/create'),'Buat Wo_package', 'class="btn btn-primary btn-rounded d-inline"'); ?>
+    <?php echo anchor(site_url('wo_package/create'),'Buat Package', 'class="btn btn-primary btn-rounded d-inline"'); ?>
     <br>
     <br>
   </div>
   <div class="col-md-4 text-center">
-    <h2 style="margin-top:0px">Daftar Wo_package</h2>
+    <h2 style="margin-top:0px">Daftar Package</h2>
 
   </div>
   <div class="col-md-4 text-right">

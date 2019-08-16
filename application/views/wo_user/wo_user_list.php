@@ -4,12 +4,12 @@
                 <button class="btn btn-flat btn-rounded hoverable btn-kembali"><h4><i class="fas fa-chevron-circle-left"></i></h4></button>
             </div>
             <div class="col-md-3 text-center mt-2">
-                <?php echo anchor(site_url('wo_user/create'),'Buat Wo_user', 'class="btn btn-primary btn-rounded d-inline"'); ?>
+                <?php echo anchor(site_url('wo_user/create'),'Buat user', 'class="btn btn-primary btn-rounded d-inline"'); ?>
                 <br>
                 <br>
             </div>
             <div class="col-md-4 text-center">
-                <h2 style="margin-top:0px">Daftar Wo_user</h2>
+                <h2 style="margin-top:0px">Daftar User</h2>
 
             </div>
             <div class="col-md-4 text-right">
