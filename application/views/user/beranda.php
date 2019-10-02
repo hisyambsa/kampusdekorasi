@@ -76,42 +76,7 @@
     </div>
     <!-- /.First container -->
 
-    <!--Second container-->
-    <div class="container">
-      <!-- Second section -->
-      <section id="highlight" class="section feature-box pt-4 pb-5">
-        <!-- First row -->
-        <div class="row text-center wow fadeIn" data-wow-delay="0.4s">
-          <!-- First column -->
-          <div class="col-md-6 mb-5 pt-1">
-            <!--Panel-->
-            <div class="card card-body hoverable">
-              <i class="fas fa-eye fa-3x mb-4 grey-text" aria-hidden="true"></i>
-              <h5 class="feature-title mb-4">Recomendation Package</h5>
-              <p class="grey-text">&nbsp</p>
-            </div>
-            <!--/.Panel-->
-          </div>
-          <!-- /First column -->
-          <!-- Second column -->
-          <div class="col-md-6 mb-5">
-            <!--Panel-->
-            <div class="card card-body hoverable">
-              <i class="fas fa-share-alt grey-text fa-3x mb-4" aria-hidden="true"></i>
-              <h5 class="feature-title mb-4">Best Price</h5>
-              <p class="grey-text">&nbsp</p>
-            </div>
-            <!--/.Panel-->
-          </div> 
-          <!-- /.Second column -->
 
-        </div>
-        <!-- /.First row -->
-      </section>
-      <!-- /.Second section -->
-    </div>
-
-    <!--/Second container-->
 
     <!--Third container -->
     <div class="container">
